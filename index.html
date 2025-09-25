@@ -1,0 +1,1303 @@
+<!doctype html>
+<html lang="en" data-theme="auto">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Tajniya Nowshin Ome — Portfolio</title>
+
+  <!-- Meta / SEO -->
+  <meta name="description" content="Portfolio of Tajniya Nowshin Ome — CSE student, NLP researcher, and front-end designer. Explore academics, research, projects, awards, and extracurriculars." />
+  <meta name="author" content="Tajniya Nowshin Ome" />
+  <meta name="theme-color" content="#ffffff" />
+  <meta property="og:title" content="Tajniya Nowshin Ome — Portfolio" />
+  <meta property="og:description" content="CSE student, researcher, and designer focused on NLP, summarization, and front-end." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://your-domain.com/" />
+  <meta property="og:image" content="https://images.unsplash.com/photo-1611239679308-6d6a0ac9f0ad?q=80&w=1200&auto=format&fit=crop" />
+  <meta name="twitter:card" content="summary_large_image" />
+
+  <!-- Fonts: Inter (body) + Merriweather (headings) -->
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Merriweather:wght@400;700;900&display=swap" rel="stylesheet">
+
+  <!-- Bootstrap 5 + Icons -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
+
+  <!-- AOS -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" rel="stylesheet">
+
+  <style>
+    /* THEME TOKENS */
+    :root{
+      --font-body: 'Inter', system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+      --font-head: 'Merriweather', Georgia, 'Times New Roman', serif;
+
+      /* Light (Day) */
+      --bg: #ffffff;
+      --bg-2: #f6f8fc;
+      --surface: #ffffff;
+      --text: #192233;
+      --muted: #3c99c4;
+      --border: #e5ebf3;
+      --card: linear-gradient(180deg, rgba(10, 20, 40, 0.02), rgba(10, 20, 40, 0.01));
+      --accent: #3c99c4;
+      --accent-2: #48b5ff;
+      --navbar-bg: rgba(255,255,255,0.8);
+      --shadow: 0 6px 24px rgba(10, 20, 40, 0.06);
+      --btn-ghost-bg: rgba(10,20,40,0.04);
+      --btn-soft-bg: rgba(91, 60, 196, 0.08);
+      --navbar-toggle: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='%2320293a' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+    }
+    [data-theme="dark"]{
+      .fw-semibold{
+       color: #6297e1;
+       }
+      --bg: #0c1222;
+      --bg-2: #101827;
+      --surface: #111a2b;
+      --text: #f4f8ff;
+      --muted: #7fa6dc;
+      --border: #102542;
+      --card: linear-gradient(180deg, rgba(255,255,255,0.04), rgba(255,255,255,0.02));
+      --accent: #4d51cb;
+      --accent-2: #95cbe9;
+      --navbar-bg: rgba(0,0,0,0.28);
+      --shadow: 0 6px 28px rgba(0, 0, 0, 0.25);
+      --btn-ghost-bg: rgba(255,255,255,0.06);
+      --btn-soft-bg: rgba(125, 98, 227, 0.16);
+      
+      --navbar-toggle: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='%23e9eef8' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+    }
+
+    html, body{
+      height: 100%;
+      color: var(--text);
+      font-family: var(--font-body);
+      background: linear-gradient(180deg, var(--bg) 0%, var(--bg-2) 100%);
+    }
+
+    /* Typography */
+    h1,h2,h3,h4,h5,h6{
+      font-family: var(--font-head);
+      letter-spacing: 0.2px;
+      color: var(--text);
+      margin-bottom: .5rem;
+    }
+    h1{ font-weight: 900; }
+    h2,h3{ font-weight: 700; }
+    .lead{ color: var(--muted); }
+    .muted{ color: var(--muted) !important; }
+
+    /* Navbar */
+    .navbar{
+      background: var(--navbar-bg);
+      backdrop-filter: blur(8px);
+      border-bottom: 1px solid var(--border);
+    }
+    .navbar .nav-link{ color: var(--text); opacity:.9; }
+    .navbar .nav-link:hover{ opacity:1; }
+    .navbar .navbar-toggler-icon{ background-image: var(--navbar-toggle); }
+
+    /* Hero */
+    .hero{ min-height: 66vh; display:flex; align-items:center; }
+    .stat{ background: var(--card); border: 1px solid var(--border); border-radius: 14px; padding: 1rem; box-shadow: var(--shadow); }
+
+    /* Cards */
+    .card-ghost{ background: var(--card); border: 1px solid var(--border); border-radius: 14px; box-shadow: var(--shadow); }
+    .project-img{ height: 170px; object-fit: cover; border-radius: 10px; }
+
+    /* Buttons */
+    .btn-primary{
+      --bs-btn-bg: var(--accent);
+      --bs-btn-border-color: var(--accent);
+      --bs-btn-hover-bg: #4d2fb3;
+      --bs-btn-hover-border-color: #4d2fb3;
+      --bs-btn-active-bg: #452aa4;
+      --bs-btn-active-border-color: #452aa4;
+    }
+    .btn-ghost{
+      color: var(--text);
+      border: 1px solid var(--border);
+      background: transparent;
+    }
+    .btn-ghost:hover{ background: var(--btn-ghost-bg); }
+    .btn-soft{
+      color: var(--text);
+      background: var(--btn-soft-bg);
+      border: 1px solid var(--border);
+    }
+
+    /* Chips */
+    .chip{
+      display:inline-flex; align-items:center; gap:.4rem;
+      background: var(--btn-ghost-bg);
+      border: 1px solid var(--border);
+      color: var(--text);
+      border-radius: 999px; padding:.25rem .6rem; font-size:.82rem;
+    }
+.btn-gradient {
+  background: linear-gradient(135deg, #6d46ec, #86aef3);
+  color: #fff;
+  padding: 5px 26px;
+  font-size: 18px;
+  font-weight: 600;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+.btn-gradient:hover {
+  opacity: 0.9;
+  transform: translateY(-3px) scale(1.02);
+  box-shadow: 0 6px 14px rgba(0,0,0,0.2);
+}
+
+.read-btn {
+  background: linear-gradient(135deg, #5099eb, #0073e6);
+  border: none;
+  border-radius: 8px;
+  padding: 10px 20px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+}
+
+.read-btn a {
+  text-decoration: none;
+  color: #fff;
+  font-weight: 600;
+  font-size: 16px;
+  font-family: "Inter", sans-serif;
+}
+
+.read-btn:hover {
+  background: linear-gradient(135deg, #0073e6, #005bb5);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 12px rgba(0,0,0,0.2);
+}
+
+    /* Timeline */
+    .timeline{ position:relative; margin-left:1rem; padding-left:1rem; }
+    .timeline::before{ content:""; position:absolute; left:0; top:0; bottom:0; width:2px; background: var(--border); border-radius: 1px; }
+    .t-item{ position:relative; margin-bottom:1.25rem; }
+    .t-item::before{
+      content:""; position:absolute; left:-1.25rem; top:.3rem;
+      width:10px;height:10px; border-radius:50%;
+      background: linear-gradient(180deg, var(--accent), var(--accent-2));
+      box-shadow: 0 0 0 4px rgba(91,60,196,0.18);
+    }
+.btn-outline-custom {
+  color: #3790de;
+  border: 1px solid #3790de;
+  background-color: transparent;
+  transition: 0.3s;
+}
+
+.btn-outline-custom:hover {
+  color: #fff;
+  background-color: #3790de;
+  border-color: #3790de;
+}
+    /* Skill bars */
+    .skill-bar{ height:10px; border-radius:8px; background: rgba(120,130,150,0.12); overflow:hidden; }
+    .skill-fill{ height:100%; border-radius:8px; background:linear-gradient(90deg, var(--accent), var(--accent-2)); width:0; transition:width 1.1s ease; }
+
+    /* Filter */
+    .filter .btn{ border:1px solid var(--border); color: var(--text); }
+    .filter .btn.active{ background: linear-gradient(90deg, var(--accent), var(--accent-2)); color:#fff; border-color: transparent; }
+
+    footer{ border-top:1px solid var(--border); color: var(--muted); }
+
+    #backToTop{ position:fixed; right:16px; bottom:16px; z-index:1080; opacity:0; visibility:hidden; transition:all .2s ease; }
+    #backToTop.show{ opacity:1; visibility:visible; }
+
+    @media (max-width:767px){
+      .hero{ min-height:56vh; padding: 2rem 0; }
+      .project-img{ height:160px; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- NAVBAR -->
+<nav class="navbar navbar-expand-lg sticky-top py-3">
+  <div class="container">
+    <a class="navbar-brand d-flex align-items-center gap-2" href="#">
+      <div class="rounded-circle" style="width:38px;height:38px;display:flex;align-items:center;justify-content:center;background:linear-gradient(180deg,#fff,rgba(255,255,255,0.7));color:var(--accent);font-weight:800;border:1px solid var(--border)">TN</div>
+      <span class="fw-semibold">Tajniya Nowshin Ome</span>
+    </a>
+
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navmenu" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navmenu">
+      <ul class="navbar-nav ms-auto align-items-center">
+        <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+        <li class="nav-item"><a class="nav-link" href="#academics">Academics</a></li>
+        <li class="nav-item"><a class="nav-link" href="#research">Research</a></li>
+        <li class="nav-item"><a class="nav-link" href="projects.html">Projects</a></li>
+        <li class="nav-item"><a class="nav-link" href="#experience">Experience</a></li>
+        <li class="nav-item"><a class="nav-link" href="awards.html">Awards</a></li>
+        <li class="nav-item"><a class="nav-link" href="#skills">Skills</a></li>
+        <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+        <li class="nav-item ms-2">
+          <button class="btn btn-soft" id="themeToggle" type="button" aria-label="Toggle theme">
+            <i class="bi bi-moon-stars me-1" id="themeIcon"></i> Theme
+          </button>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="container">
+    <div class="row align-items-center g-4">
+      <div class="col-lg-7" data-aos="fade-up">
+        <h1 class="mb-2">Tajniya Nowshin Ome</h1>
+        <p class="lead mb-3">Final‑year Computer Science & Engineering student
+<br><br><br>
+          <div class="d-flex flex-wrap gap-2">
+          <a href="#projects" class="btn btn-primary btn-lg"><i class="bi bi-rocket me-2"></i>View Portfolio</a>
+          <a href="#contact" class="btn btn-ghost btn-lg"><i class="bi bi-envelope me-2"></i>Contact</a>
+        </div>
+
+        <div class="row row-cols-2 row-cols-md-4 g-2 mt-4">
+          <div class="col">
+            <div class="stat text-center">
+              <div class="muted small">Publications</div>
+              <h4 class="mb-0"><span id="pubCount">0</span>+</h4>
+            </div>
+          </div>
+          <div class="col">
+            <div class="stat text-center">
+              <div class="muted small">Projects</div>
+              <h4 class="mb-0"><span id="projCount">0</span>0+</h4>
+            </div>
+          </div>
+          <div class="col">
+            <div class="stat text-center">
+              <div class="muted small">Teaching Experience</div>
+              <h4 class="mb-0">TA</h4>
+            </div>
+          </div>
+          
+        </div>
+
+        <div class="mt-3 small muted">Open to Research, Internships and Collaborations</div>
+      </div>
+
+      <div class="col-lg-5" data-aos="fade-left">
+        <div class="card-ghost p-4" style="max-width:440px;margin-left:auto;margin-right:auto;">
+          <div class="text-center">
+            <img src="WhatsApp Image 2025-09-24 at 23.23.53_2fe198fc.jpg" alt="Profile photo" class="rounded-circle img-fluid" style="width:250px;height:250px;object-fit:cover;border-radius: 50%">
+            <div class="mt-3">
+              <h5 class="mb-0">CSE Student · Researcher · Designer</h5>
+             
+            </div>
+            <div class="d-flex gap-2 mt-3 justify-content-center flex-wrap">
+              <a href="mailto:nowshintajniya@gmail.com" class="btn btn-ghost btn-sm" aria-label="Email"><i class="bi bi-envelope-fill me-1"></i>Email</a>
+              <a href="https://github.com/tajniya-nowshin-ome" class="btn btn-ghost btn-sm" aria-label="GitHub"><i class="bi bi-github me-1"></i>GitHub</a>
+              <a href="https://www.linkedin.com/in/tajniya-nowshin-ome-84a62b259/?originalSubdomain=bd" class="btn btn-ghost btn-sm" aria-label="LinkedIn"><i class="bi bi-linkedin me-1"></i>LinkedIn</a>
+              
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT + ACADEMICS -->
+<section id="about" class="py-5">
+  <div class="container">
+    <div class="row g-4">
+      <div class="col-lg-6" data-aos="fade-right">
+        <div class="card-ghost p-4 h-100">
+          <h3>About</h3>
+          <p class="muted mt-2">
+            I am a final-year undergraduate student in Computer Science and Engineering at the International Islamic University Chittagong. My research interests broadly span Artificial Intelligence, with a particular focus on Natural Language Processing and Image Processing. I value precision, clear communication, and teamwork, and I am passionate about turning research ideas into practical systems. My goal is to create solutions that are not only technically sound but also accessible and user-friendly.
+          </p>
+          <br><br>
+          <ul class="list-unstyled mt-2">
+            <li class="mb-1"><strong>Location:</strong> Chattogram, Bangladesh</li>
+            <li class="mb-1"><strong>Current roles:</strong> Teaching Assistant · Graphics Lead · Researcher</li>
+            <li class="mb-1"><strong>Field of interests:</strong> AI · Graphics Designing · Books · History · Research · Photography · Robotics</li>
+            
+          </ul>
+          <!--<div class="mt-2 d-flex flex-wrap gap-2">
+            <span class="chip"><i class="bi bi-cpu"></i>NLP</span>
+            <span class="chip"><i class="bi bi-journal-text"></i>Summarization</span>
+            <span class="chip"><i class="bi bi-images"></i>Image Processing</span>
+            <span class="chip"><i class="bi bi-phone"></i>Flutter</span>
+            <span class="chip"><i class="bi bi-brush"></i>Graphics Design</span>
+          </div>-->
+        </div>
+      </div>
+
+      <div class="col-lg-6" id="academics" data-aos="fade-left">
+        <div class="card-ghost p-4 h-100">
+          <h3>Academics</h3>
+          <div class="timeline mt-3">
+            <div class="t-item">
+              <div class="d-flex justify-content-between align-items-start">
+                <div>
+                  <h5 class="mb-1">B.Sc. in Computer Science & Engineering</h5>
+                  <div class="muted">International Islamic University Chittagong · Chattogram</div>
+                </div>
+                <span class="badge text-bg-light" style="border:1px solid var(--border);background:transparent;color:var(--text)">2021–2025</span>
+              </div>
+              <div class="mt-2"><strong>CGPA:</strong> 3.71 / 4.00</div>
+              <div class="mt-2">
+                <div class="muted small mb-1">Major Coursework</div>
+                <div class="d-flex flex-wrap gap-1">
+                  <span class="chip">Machine Learning</span>
+                  <span class="chip">Natural Language Processing</span>
+                  <span class="chip">Image Processing</span>
+                  <span class="chip">Data Structures & Algorithms</span>
+                  <span class="chip">Database Systems</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="t-item">
+              <div class="d-flex justify-content-between align-items-start">
+                <div>
+                  <h5 class="mb-1">Higher Secondary Certificate</h5>
+                  <div class="muted">Chittagong Govt. Women College · Chattogram</div>
+                </div>
+                <span class="badge text-bg-light" style="border:1px solid var(--border);background:transparent;color:var(--text)">2017–2021</span>
+              </div>
+              <div class="mt-2"><strong>GPA:</strong> 5.00 / 5.00</div>
+
+            </div>
+
+               <div class="t-item">
+              <div class="d-flex justify-content-between align-items-start">
+                <div>
+                  <h5 class="mb-1">Secondary School Certificate</h5>
+                  <div class="muted">City Govt. Girls High School · Chattogram</div>
+                </div>
+                <span class="badge text-bg-light" style="border:1px solid var(--border);background:transparent;color:var(--text)">2015–2017</span>
+              </div>
+              <div class="mt-2"><strong>GPA:</strong> 5.00 / 5.00</div>
+
+            </div>
+         
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- RESEARCH -->
+<section id="research" class="py-5">
+  <div class="container">
+    <div class="d-flex justify-content-between align-items-end mb-3">
+      <h3 class="mb-0">Research — Publications & Abstracts</h3>
+  
+    </div>
+
+    <div class="row g-4">
+      <div class="col-lg-8" data-aos="fade-up">
+        <div class="card-ghost p-4">
+          <ol class="mb-0" id="pubList">
+            <!-- Publication -->
+            <li class="mb-3 pub-item">
+              <div class="d-flex flex-column flex-md-row justify-content-between">
+                <div>
+                  <strong>Advanced Machine Learning Approaches for Accurate Sugarcane Yield Prediction with Ensemble Techniques</strong><br>
+               <br>
+                  <button class="read-btn">
+  <a href="https://ieeexplore.ieee.org/document/11013297" target="_blank">CITE</a>
+</button>
+                </div>
+                <div class="mt-2 mt-md-0">
+                  <a href="https://drive.google.com/file/d/1v0gTkUNP2W_svaAt_vnXfg7Yq_QzUGEM/view?usp=sharing" class="btn btn-ghost btn-sm me-1"><i class="bi bi-file-earmark-text me-1"></i>PDF</a>
+                 
+              </div>
+            
+            </li>
+              <div class="small muted mt-3">ECCE 2025</div>
+          </ol>
+
+          <hr class="my-3">
+
+          <!-- Abstracts -->
+          <h6 class="mb-2">Abstracts (Accepted)</h6>
+          <ul class="mb-0">
+
+               <li><strong>Abstract 431 </strong> -Advanced Machine Learning Approaches for Accurate Sugarcane Yield Prediction with Ensemble Techniques</li>
+                 <li><strong>Abstract 441 </strong> -Predicting Low and Normal Phosphorus Tolerance in Maize Using Advanced Ensemble Classifiers</li>
+                 <li><strong>Abstract 448 </strong> -Intelligent Detection of Speech Delay and Autism Traits Using Machine Learning: An Association Rule Mining Approach</li>
+                 <li><strong>Abstract 457 </strong> -Eggplant Yield Prediction Utilizing 130 Locally Collected Genotypes and Machine Learning Models</li>
+          </ul>
+
+          <div class="small muted mt-3">IEEE CS BDC Summer Symposium 2025</div>
+        </div>
+      </div>
+
+      <div class="col-lg-4" data-aos="fade-left">
+        <div class="card-ghost p-4 h-100">
+          <h5>Research Interests</h5>
+          <br>
+          <div class="d-flex flex-wrap gap-2 mb-3">
+            <span class="chip">NLP</span>
+            <span class="chip">ML</span>
+            <span class="chip">Image Processing</span>
+            <span class="chip">Information Retrieval</span>
+            <span class="chip">Computer Vision</span>
+             <span class="chip">Deep Learning & Neural Networks</span>
+              <span class="chip">Multilingual and Low-Resource Language Processing</span>
+          </div>
+          <br>
+          <h6>Services</h6>
+          <ul class="muted mb-0">
+            <li>Design Co-Chair — ICRCS 2025</li>
+            <li>Web & IT Co-Chair — QPAIN 2025</li>
+             <li>Web & IT Co-Chair — COMPAS 2025</li>
+            <li>Session Moderator — COMPAS 2024</li>
+            
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROJECTS -->
+<section id="projects" class="py-5">
+  <div class="container">
+    <div class="d-flex justify-content-between align-items-center mb-3">
+      <h3 class="mb-0">Core Projects</h3>
+      <div class="small muted"></div>
+    </div>
+
+    <!--<div class="mb-3 filter d-flex flex-wrap gap-2" data-aos="fade-up">
+      <button class="btn btn-ghost btn-sm active" data-filter="all">All</button>
+      <button class="btn btn-ghost btn-sm" data-filter="nlp">NLP</button>
+      <button class="btn btn-ghost btn-sm" data-filter="cv">Computer Vision</button>
+      <button class="btn btn-ghost btn-sm" data-filter="web">Web</button>
+      <button class="btn btn-ghost btn-sm" data-filter="mobile">Mobile</button>
+      <button class="btn btn-ghost btn-sm" data-filter="dataviz">DataViz</button>
+    </div>-->
+
+    <div class="row g-4" id="projectGrid">
+      <!-- Project templates (unchanged; replace with your links) -->
+      <div class="col-md-6 col-lg-4 project-card" data-category="nlp" data-aos="zoom-in">
+        <div class="card-ghost p-3 h-100">
+          <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS0Eb3oQ6s5c_gd8iI6iehEvbQD5aFGJcDJ6Q&s" class="project-img w-100" alt="Hybrid Summarizer">
+          <div class="mt-3">
+            <h5>Hybrid Text Summarizer</h5>
+            <p class="small muted mb-2">Extractive + Abstractive pipeline for Bangla, English & Banglish.</p>
+            <div class="d-flex justify-content-between align-items-center">
+              <button class="btn btn-ghost btn-sm"
+                onclick="openProjectModal(this)"
+                data-title="Hybrid Text Summarizer"
+                data-stack="Python · Transformers · Hugging Face"
+                data-year="2024"
+                data-desc="Combines extractive sentence ranking with T5-style abstractive generation; custom tokenization and post‑processing for Bangla, English & Banglish."
+                data-img="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS0Eb3oQ6s5c_gd8iI6iehEvbQD5aFGJcDJ6Q&s"
+                data-code="https://github.com/your-username/hybrid-summarizer"
+                data-demo="#"
+                data-paper="#">
+                View details
+              </button>
+              <div class="small muted">Python · Transformers</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-6 col-lg-4 project-card" data-category="cv" data-aos="zoom-in" data-aos-delay="50">
+        <div class="card-ghost p-3 h-100">
+          <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQk8ITHeQoxLxKwE2nzY6kpAKOm50v2xYIXwA&s" class="project-img w-100" alt="Facial Emotion Recognition">
+          <div class="mt-3">
+            <h5>Facial Emotion Recognition</h5>
+            <p class="small muted mb-2">CNN‑based emotion detection with augmentation.</p>
+            <div class="d-flex justify-content-between align-items-center">
+              <button class="btn btn-ghost btn-sm"
+                onclick="openProjectModal(this)"
+                data-title="Facial Emotion Recognition"
+                data-stack="PyTorch · OpenCV"
+                data-year="2024"
+                data-desc="Transfer learning with ResNet, augmentation, and class balance; real‑time webcam inference using OpenCV."
+                data-img="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQk8ITHeQoxLxKwE2nzY6kpAKOm50v2xYIXwA&s"
+                data-code="https://github.com/your-username/emotion-cnn"
+                data-demo="#">
+                View details
+              </button>
+              <div class="small muted">OpenCV · PyTorch</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-6 col-lg-4 project-card" data-category="web" data-aos="zoom-in" data-aos-delay="100">
+        <div class="card-ghost p-3 h-100">
+          <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQn92jkqm9iFlBuLm4-MV48Hti_x9kLlXJXDQ&s" class="project-img w-100" alt="Image Processing Lab Tools">
+          <div class="mt-3">
+            <h5>Speech Delay & Autism Detection</h5>
+            <p class="small muted mb-2">Developed interpretable pipeline for early ASD detection using ARM on Q-Chat-10 data.</p>
+            <div class="d-flex justify-content-between align-items-center">
+              <button class="btn btn-ghost btn-sm"
+                onclick="openProjectModal(this)"
+                data-title="Speech Delay & Autism Detection"
+                data-stack="Python · OpenCV · Streamlit"
+                data-year="2023"
+                data-desc="By Using Association Rule Mining ,Developed interpretable pipeline for early ASD detection using ARM on Q-Chat-10 data, providing actionable insights for clinicians."
+                data-img="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQn92jkqm9iFlBuLm4-MV48Hti_x9kLlXJXDQ&s"
+                data-code="https://github.com/your-username/ip-lab"
+                data-demo="#">
+                View details
+              </button>
+              <div class="small muted">Matlab · Python</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!--<div class="col-md-6 col-lg-4 project-card" data-category="nlp" data-aos="zoom-in" data-aos-delay="150">
+        <div class="card-ghost p-3 h-100">
+          <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQUTXVhKcchHLw-uu9-7dOn18671HxA6aU1zw&s" class="project-img w-100" alt="Offensive Language Detection">
+          <div class="mt-3">
+            <h5>Bangla Offensive Language Detection</h5>
+            <p class="small muted mb-2">Fine‑tuned transformers for toxicity classification.</p>
+            <div class="d-flex justify-content-between align-items-center">
+              <button class="btn btn-ghost btn-sm"
+                onclick="openProjectModal(this)"
+                data-title="Bangla Offensive Language Detection"
+                data-stack="Python · Transformers · Datasets"
+                data-year="2024"
+                data-desc="Multilingual models with class weighting and focal loss; evaluated with F1 and MCC; robust preprocessing for Bangla text."
+                data-img="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQUTXVhKcchHLw-uu9-7dOn18671HxA6aU1zw&s"
+                data-code="https://github.com/your-username/bn-offensive"
+                data-demo="#">
+                View details
+              </button>
+              <div class="small muted">NLP · Classification</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+      <div class="col-md-6 col-lg-4 project-card" data-category="mobile" data-aos="zoom-in" data-aos-delay="200">
+        <div class="card-ghost p-3 h-100">
+          <img src="https://images.unsplash.com/photo-1551650975-87deedd944c3?q=80&w=1200&auto=format&fit=crop" class="project-img w-100" alt="Flutter Habit Tracker">
+          <div class="mt-3">
+            <h5>Flutter Habit Tracker</h5>
+            <p class="small muted mb-2">Minimal habit tracking with charts and reminders.</p>
+            <div class="d-flex justify-content-between align-items-center">
+              <button class="btn btn-ghost btn-sm"
+                onclick="openProjectModal(this)"
+                data-title="Flutter Habit Tracker"
+                data-stack="Flutter · Provider · SQLite"
+                data-year="2023"
+                data-desc="Offline‑first app with streaks, analytics, and local notifications; designed for accessibility and consistency."
+                data-img="https://images.unsplash.com/photo-1551650975-87deedd944c3?q=80&w=1200&auto=format&fit=crop"
+                data-code="https://github.com/your-username/habit-tracker"
+                data-demo="#">
+                View details
+              </button>
+              <div class="small muted">Flutter · Mobile</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-6 col-lg-4 project-card" data-category="dataviz" data-aos="zoom-in" data-aos-delay="250">
+        <div class="card-ghost p-3 h-100">
+          <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRaFOKgpogGcI2w7WBHFAwyJA3BsL5lyokW0A&s" class="project-img w-100" alt="Data Visualization Dashboard">
+          <div class="mt-3">
+            <h5>Sugarcane Yield Prediction</h5>
+            <p class="small muted mb-2">Forecasted sugarcane yield using ensemble ML</p>
+            <div class="d-flex justify-content-between align-items-center">
+              <button class="btn btn-ghost btn-sm"
+                onclick="openProjectModal(this)"
+                data-title="Sugarcane Yield Prediction"
+                data-stack="Colab,kaggle,Matlab"
+                data-year="2023"
+                data-desc="Ensemble ML,RandomForest,Stacking-Forecasted sugarcane yield using ensemble ML. Accepted paper at symposium, demonstrating practical agricultural optimization."
+                data-img="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRaFOKgpogGcI2w7WBHFAwyJA3BsL5lyokW0A&s"
+                data-code="https://github.com/your-username/dataviz-dashboard"
+                data-demo="#">
+                View details
+              </button>
+              <div class="small muted">Web · Charts</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+            <div class="col-md-6 col-lg-4 project-card" data-category="nlp" data-aos="zoom-in" data-aos-delay="150">
+        <div class="card-ghost p-3 h-100">
+          <img src="WhatsApp Image 2025-09-24 at 19.05.44_ff590e4e.jpg" class="project-img w-100" alt="Offensive Language Detection">
+          <div class="mt-3">
+            <h5>Maze Solver Robot</h5>
+            <p class="small muted mb-2">A Maze Solver Robot is an autonomous robotic system designed to navigate and find the optimal path in a maze without human intervention</p>
+            <div class="d-flex justify-content-between align-items-center">
+              <button class="btn btn-ghost btn-sm"
+                onclick="openProjectModal(this)"
+                data-title="Maze Solver Robot"
+                data-stack="Arduino · STM32 · PIC"
+                data-year="2024"
+                data-desc="It typically uses sensors such as IR sensors, ultrasonic sensors, or cameras to detect walls and pathways. Algorithms like Depth-First Search (DFS), Breadth-First Search (BFS), Dijkstra’s Algorithm, or the Flood Fill algorithm are implemented to decide the shortest or most efficient path."
+                data-img="WhatsApp Image 2025-09-24 at 19.05.44_ff590e4e.jpg"
+                data-code="https://github.com/your-username/bn-offensive"
+                data-demo="#">
+                View details
+              </button>
+              <div class="small muted">Arduino · STM32 · PIC</div>
+            </div>
+          </div>
+        </div>
+      </div>
+            <div class="col-md-6 col-lg-4 project-card" data-category="nlp" data-aos="zoom-in" data-aos-delay="150">
+        <div class="card-ghost p-3 h-100">
+          <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQI-E4rf4JkMma6cQPT0-xqnUGqBTsJC-mL1A&s" class="project-img w-100" alt=".">
+          <div class="mt-3">
+            <h5>Basic VPN Setup with OpenVPN</h5>
+            <p class="small muted mb-2">Establish a secure virtual private network (VPN) and understand encryption tunnels.</p>
+            <div class="d-flex justify-content-between align-items-center">
+              <button class="btn btn-ghost btn-sm"
+                onclick="openProjectModal(this)"
+                data-title="Basic VPN Setup with OpenVPN"
+                data-stack="Kali · Linux ·  OpenVPN"
+                data-year="2024"
+                data-desc="Configured a VPN server and client to enable secure remote connections.Explored encryption protocols to protect data in transit."
+                data-img="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQI-E4rf4JkMma6cQPT0-xqnUGqBTsJC-mL1A&s"
+                data-code="https://github.com/your-username/bn-offensive"
+                data-demo="#">
+                View details
+              </button>
+              <div class="small muted">Kali · Linux ·  OpenVPN</div>
+            </div>
+          </div>
+        </div>
+      </div>
+            <div class="col-md-6 col-lg-4 project-card" data-category="nlp" data-aos="zoom-in" data-aos-delay="150">
+        <div class="card-ghost p-3 h-100">
+          <img src="image.png" class="project-img w-100" alt="Offensive Language Detection">
+          <div class="mt-3">
+            <h5>3D Maze Explorer</h5>
+            <p class="small muted mb-2">The 3D Maze Explorer is an engaging and immersive application developed using OpenGL and GLUT libraries.</p>
+            <div class="d-flex justify-content-between align-items-center">
+              <button class="btn btn-ghost btn-sm"
+                onclick="openProjectModal(this)"
+                data-title="3D Maze Explorer"
+                data-stack="OpenGL · GLUT"
+                data-year="2024"
+                data-desc="It provides users with a dynamic 3D environment
+where they can explore a maze, collect objects, and track their scores. The application
+features realistic lighting effects, intuitive navigation, a real-time HUD, and
+interactive gameplay mechanics."
+                data-img="image.png"
+                data-code="https://github.com/your-username/bn-offensive"
+                data-demo="#">
+                View details
+              </button>
+              <div class="small muted">OpenGL · GLUT</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>-->
+
+    <button onclick="location.href='projects.html'" 
+  class="btn-gradient">
+  See More →
+</button>
+    
+    <div class="small muted mt-3"></div>
+  </div>
+</section>
+
+<!-- EXPERIENCE -->
+<section id="experience" class="py-5">
+  <div class="container">
+    <h3 class="mb-3">Experience & Extracurriculars</h3>
+    <div class="row g-4">
+      
+      <!-- Left Card: Experience + Conferences -->
+      <div class="col-lg-6" data-aos="fade-right">
+        <div class="card-ghost p-4 h-100">
+          <h5 class="mb-2">Experience</h5>
+          <div class="timeline">
+            <div class="t-item">
+              <div class="d-flex justify-content-between">
+                <strong>Teaching Assistant — Dept. of CSE, IIUC</strong>
+                <span class="small muted">Au-24 to Sp-25</span>
+              </div>
+              <div class="muted">SD1 · Numerical Method · Neural Network · DBMS</div>
+              <ul class="mb-0 mt-1">
+                <li>Conducted labs, grading, and student consultations.</li>
+                <li>Prepared slides and demonstration notebooks.</li>
+              </ul>
+            </div>
+
+            <div class="t-item">
+              <strong>EDGE Course — IIUC</strong>
+              <ul class="mb-0 mt-1">
+                <li>Completed the EDGE (Enhancement of Digital and Global Employability) course at IIUC, focusing on professional growth, communication, and employability skills.</li>
+              </ul>
+            </div>
+
+            <div class="t-item">
+              <strong>Industrial Attachment Program — CUET</strong>
+              <ul class="mb-0 mt-1">
+                <li>Currently undertaking an Industrial Attachment Program, gaining practical exposure to engineering practices, industry workflows, and professional environments.</li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- Conference Section -->
+          <h5 class="mt-4 mb-2">Conferences</h5>
+          <div class="timeline">
+            <div class="t-item">
+              <div class="d-flex justify-content-between">
+                <strong>Design Co-Chair — ICRCS 2025</strong>
+                <span class="small muted">2025</span>
+              </div>
+              <ul class="mb-0 mt-1">
+                <li>Lead creative design initiatives, ensuring a professional and engaging visual identity across conference materials.</li>
+              </ul>
+            </div>
+
+            <div class="t-item">
+              <div class="d-flex justify-content-between">
+                <strong>Web & IT Co-Chair — QPAIN 2025</strong>
+                <span class="small muted">2025</span>
+              </div>
+              <ul class="mb-0 mt-1">
+                <li>Managed web infrastructure, technical support, and IT operations for seamless conference execution.</li>
+              </ul>
+            </div>
+
+            <div class="t-item">
+              <div class="d-flex justify-content-between">
+                <strong>Web & IT Co-Chair — COMPAS 2025</strong>
+                <span class="small muted">2025</span>
+              </div>
+              <ul class="mb-0 mt-1">
+                <li>Coordinated IT systems, website management, and technical assistance throughout the conference.</li>
+              </ul>
+            </div>
+
+            <div class="t-item">
+              <div class="d-flex justify-content-between">
+                <strong>Session Coordinator — COMPAS 2024</strong>
+                <span class="small muted">2024</span>
+              </div>
+              <ul class="mb-0 mt-1">
+                <li>Coordinated multiple technical sessions, liaised with speakers, and supported smooth event management.</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Right Card: Leadership & Club Activities -->
+      <div class="col-lg-6" data-aos="fade-left">
+        <div class="card-ghost p-4 h-100">
+          <h5 class="mb-2">Leadership & Club Activities</h5>
+          <div class="timeline">
+
+            <div class="t-item">
+              <div class="d-flex justify-content-between">
+                <strong>Vice Chairperson — IEEE Robotics & Automation Society, IIUC SBC</strong>
+                <span class="small muted">2024–2025</span>
+              </div>
+              <ul class="mb-0 mt-1">
+                <li>Leading initiatives in robotics, automation, and technical activities under IEEE RAS IIUC SBC.</li>
+              </ul>
+            </div>
+
+            <div class="t-item">
+              <div class="d-flex justify-content-between">
+                <strong>Secretary (Web & IT) — IEEE Computer Society Bangladesh Branch</strong>
+                <span class="small muted">2024–2025</span>
+              </div>
+              <ul class="mb-0 mt-1">
+                <li>Managing web and IT operations; ensuring smooth digital communications and platforms.</li>
+              </ul>
+            </div>
+
+            <div class="t-item">
+              <div class="d-flex justify-content-between">
+                <strong>Lead Graphics Designer — IEEE Computer Society, IIUC SBC</strong>
+                <span class="small muted">2024–2025</span>
+              </div>
+              <ul class="mb-0 mt-1">
+                <li>Designed creative assets, event branding, and visual identities for IEEE CS IIUC SBC events.</li>
+              </ul>
+            </div>
+
+            <div class="t-item">
+              <div class="d-flex justify-content-between">
+                <strong>Research & Development Secretary — IIUC Computer Club</strong>
+                <span class="small muted">2024–2025</span>
+              </div>
+              <ul class="mb-0 mt-1">
+                <li>Promoting research-driven activities, workshops, and innovation projects in the club.</li>
+              </ul>
+            </div>
+
+            <div class="t-item">
+              <div class="d-flex justify-content-between">
+                <strong>Deputy Head (Creative & Design) — Hult Prize at IIUC</strong>
+                <span class="small muted">2023–2024</span>
+              </div>
+              <ul class="mb-0 mt-1">
+                <li>Directed creative strategies, branding, and design for Hult Prize initiatives.</li>
+              </ul>
+            </div>
+
+            <div class="t-item">
+              <div class="d-flex justify-content-between">
+                <strong>Assistant R&D Secretary — IIUC Computer Club</strong>
+                <span class="small muted">2023–2024</span>
+              </div>
+              <ul class="mb-0 mt-1">
+                <li>Assisted in research projects, workshops, and technical activities within the club.</li>
+              </ul>
+            </div>
+
+            <div class="t-item">
+              <div class="d-flex justify-content-between">
+                <strong>Graphic Designer — IEEE Computer Society, IIUC SBC</strong>
+                <span class="small muted">2023–2024</span>
+              </div>
+              <ul class="mb-0 mt-1">
+                <li>Created digital designs, posters, and conference branding materials.</li>
+              </ul>
+            </div>
+
+            <div class="t-item">
+              <div class="d-flex justify-content-between">
+                <strong>Graphic Team Volunteer — IEEE Computer Society Bangladesh Chapter Secretariat</strong>
+                <span class="small muted">2023–2024</span>
+              </div>
+              <ul class="mb-0 mt-1">
+                <li>Supported graphic design and communications for IEEE Bangladesh Chapter events.</li>
+              </ul>
+            </div>
+
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- AWARDS -->
+<section id="awards" class="py-5">
+  <div class="container">
+    <h3 class="mb-3">Awards & Certifications</h3>
+    <div class="row g-3" data-aos="fade-up">
+      <div class="col-md-6">
+        <div class="card-ghost p-3">
+          <div class="d-flex align-items-start gap-3">
+            <i class="bi bi-award fs-3" style="color:#3790de"></i>
+            <div>
+              <strong>Best Secretariat Volunteer Award</strong>
+              <div class="muted">IEEE Computer Society Bangladesh Chapter · 2024</div>
+              <div class="small muted mt-1">In recognition of dedicated volunteer service.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-6">
+        <div class="card-ghost p-3">
+          <div class="d-flex align-items-start gap-3">
+            <i class="bi bi-trophy fs-3" style="color:#3790de"></i>
+            <div>
+              <strong>Unswerving Contributions Award</strong>
+              <div class="muted">COMPAS ’24 Conference · 2024</div>
+              <div class="small muted mt-1">For impactful support to conference activities.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-6">
+        <div class="card-ghost p-3">
+          <div class="d-flex align-items-start gap-3">
+            <i class="bi bi-stars fs-3" style="color:#3790de"></i>
+            <div>
+              <strong>Recognition — QPAIN ’25 Conference</strong>
+              <div class="muted">QPAIN 2025 · 2025</div>
+              <div class="small muted mt-1">Appreciation Award for conference contributions.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-6">
+        <div class="card-ghost p-3">
+          <div class="d-flex align-items-start gap-3">
+            <i class="bi bi-people fs-3" style="color:#3790de"></i>
+            <div>
+              <strong>Organizing Member Certificate — ICRCS ’25</strong>
+              <div class="muted">ICRCS 2025 · 2025</div>
+              <div class="small muted mt-1">Recognized as an organizing member.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-6">
+        <div class="card-ghost p-3">
+          <div class="d-flex align-items-start gap-3">
+            <i class="bi bi-award-fill fs-3" style="color:#3790de"></i>
+            <div>
+              <strong>Exceptional Contribution Award</strong>
+              <div class="muted">IEEE IIUC Student Branch Chapter · 2024</div>
+              <div class="small muted mt-1">For outstanding service to the chapter.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Certificates summary -->
+      <div class="col-md-6">
+        <div class="card-ghost p-3">
+          <div class="d-flex align-items-start gap-3">
+            <i class="bi bi-patch-check fs-3" style="color:#3790de"></i>
+            <div>
+              <strong>Click below to see all awards and certificates.</strong>
+             <!--<ul class="mb-0 muted">
+                <li>Certificate Title — Issuer (Year)</li>
+                <li>Certificate Title — Issuer (Year)</li>
+                <li>Certificate Title — Issuer (Year)</li>
+              </ul>--> 
+
+        <div><a href="awards.html" class="btn btn-sm btn-outline-custom mt-2">
+  View Awards & Certificates
+</a></div>
+      </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+    <div class="small muted mt-2"></div>
+  </div>
+</section>
+
+<!-- SKILLS -->
+<section id="skills" class="py-5">
+  <div class="container">
+    <h3 class="mb-4" style="color: #ffffff">Skills</h3>
+    <div class="row g-4">
+
+      <!-- Core Skills -->
+      <div class="col-lg-6" data-aos="fade-right">
+        <!-- USE card-ghost INSTEAD OF .card -->
+        <div class="card-ghost p-4 h-100">
+          <h6 class="muted">Technical Skills</h6>
+
+          <div class="mt-3">
+            <p class="mb-1 fw-medium">Programming Languages</p>
+            <div class="skill-bar my-1"><div class="skill-fill" style="--target:90%"></div></div>
+            <small class="muted">C, C++, Python, HTML, CSS, JavaScript</small>
+          </div>
+
+          <div class="mt-3">
+            <p class="mb-1 fw-medium">Machine Learning & NLP</p>
+            <div class="skill-bar my-1"><div class="skill-fill" style="--target:85%"></div></div>
+          </div>
+
+          <div class="mt-3">
+            <p class="mb-1 fw-medium">Web Development</p>
+            <div class="skill-bar my-1"><div class="skill-fill" style="--target:90%"></div></div>
+            <small class="muted">HTML, CSS, JavaScript</small>
+          </div>
+
+          <div class="mt-3">
+            <p class="mb-1 fw-medium">Mobile Development</p>
+            <div class="skill-bar my-1"><div class="skill-fill" style="--target:75%"></div></div>
+            <small class="muted">Flutter, Dart</small>
+          </div>
+        </div>
+      </div>
+
+      <!-- Tools & Professional Skills -->
+      <div class="col-lg-6" data-aos="fade-left">
+        <!-- USE card-ghost INSTEAD OF .card -->
+        <div class="card-ghost p-4 h-100">
+          <h6 class="muted">Tools & Libraries</h6>
+          <!-- USE .chip INSTEAD OF .badge -->
+          <div class="d-flex flex-wrap gap-2 mt-2">
+            <span class="chip">Illustrator</span>
+            <span class="chip">Photoshop</span>
+            <span class="chip">Canva</span>
+            <span class="chip">Bootstrap</span>
+            <span class="chip">Figma</span>
+            <span class="chip">Git/GitHub</span>
+            <span class="chip">MATLAB</span>
+            <span class="chip">LaTeX</span>
+            <span class="chip">Oracle</span>
+            <span class="chip">Autocad</span>
+            <span class="chip">Pandas</span>
+            <span class="chip">Matplotlib</span>
+ 
+          </div>
+
+          <hr class="my-4" />
+
+          <h6 class="muted">Professional Skills</h6>
+          <!-- USE .chip INSTEAD OF .badge -->
+          <div class="d-flex flex-wrap gap-2 mt-2">
+            <span class="chip"><i class="bi bi-people"></i> Teamwork</span>
+            <span class="chip"><i class="bi bi-chat-dots"></i> Communication</span>
+            <span class="chip"><i class="bi bi-lightbulb"></i> Research Thinking</span>
+            <span class="chip"><i class="bi bi-palette"></i> Design Sense</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="small muted mt-3">
+      
+    </div>
+  </div>
+</section>
+
+
+<!-- CONTACT -->
+<section id="contact" class="py-5">
+  <div class="container">
+    <div class="row g-4">
+      <div class="col-md-6" data-aos="fade-right">
+        <div class="card-ghost p-4 h-100">
+          <h3>Contact</h3>
+          <p class="muted">For collaborations or inquiries, please reach out.</p>
+
+          <form id="contactForm" onsubmit="sendMail(event)">
+            <div class="mb-3">
+              <label class="form-label">Your name</label>
+              <input class="form-control" id="cname" required>
+            </div>
+            <div class="mb-3">
+              <label class="form-label">Your email</label>
+              <input type="email" class="form-control" id="cemail" required>
+            </div>
+            <div class="mb-3">
+              <label class="form-label">Message</label>
+              <textarea class="form-control" id="cmsg" rows="4" required></textarea>
+            </div>
+            <button class="btn btn-primary"><i class="bi bi-send-fill me-2"></i>Send message</button>
+            <div id="formStatus" class="small mt-2"></div>
+          </form>
+
+          <div class="mt-4 small muted">
+            Email: <a href="mailto:nowshintajniya@gmail.com">nowshintajniya@gmail.com</a><br>
+           
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-6" data-aos="fade-left">
+        <div class="card-ghost p-4 h-100 text-center">
+          <br><br><br><br><br><br><h5>Quick Links</h5>
+          <p class="muted">Download resume and follow</p>
+          <a class="btn btn-ghost mb-2" href="https://drive.google.com/file/d/1zKa1fxtS69i-J2DRS5B-lS4qiAvOqCdH/view?usp=sharing" id="resumeLink"><i class="bi bi-file-earmark-arrow-down me-2"></i>Download Resume</a>
+          <div class="mt-3 d-flex justify-content-center gap-2 flex-wrap">
+            <a href="https://github.com/tajniya-nowshin-ome" class="btn btn-ghost btn-sm"><i class="bi bi-github me-1"></i>GitHub</a>
+            <a href="https://www.linkedin.com/in/tajniya-nowshin-ome-84a62b259/?originalSubdomain=bd" class="btn btn-ghost btn-sm"><i class="bi bi-linkedin me-1"></i>LinkedIn</a>
+            <a href="https://scholar.google.com/citations?user=your-id" class="btn btn-ghost btn-sm"><i class="bi bi-mortarboard me-1"></i>Scholar</a>
+            
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="py-4">
+  <div class="container d-flex flex-column flex-md-row justify-content-between align-items-center gap-2">
+    <div>© <strong>Tajniya Nowshin Ome</strong></div>
+    <!-- Add this line -->
+    <div class="small">Last updated: <span id="lastUpdated"></span></div>
+  </div>
+</footer>
+
+<!-- Back to top -->
+<button id="backToTop" class="btn btn-primary rounded-circle shadow" aria-label="Back to top"><i class="bi bi-arrow-up"></i></button>
+
+<!-- Project Modal -->
+<div class="modal fade" id="projectModal" tabindex="-1" aria-hidden="true">
+  <div class="modal-dialog modal-lg modal-dialog-centered">
+    <div class="modal-content card-ghost">
+      <div class="modal-header border-0">
+        <h5 class="modal-title" id="pmTitle">Project</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body pt-0">
+        <img id="pmImg" src="" alt="" class="img-fluid rounded mb-3" style="max-height:320px;object-fit:cover">
+        <div class="d-flex flex-wrap gap-2 mb-2">
+          <span class="chip" id="pmStack"></span>
+          <span class="chip" id="pmYear"></span>
+        </div>
+        <p class="muted" id="pmDesc"></p>
+      </div>
+      <div class="modal-footer border-0">
+        <a href="#" target="_blank" class="btn btn-ghost" id="pmCode"><i class="bi bi-code-slash me-2"></i>Code</a>
+        <a href="#" target="_blank" class="btn btn-ghost" id="pmDemo"><i class="bi bi-box-arrow-up-right me-2"></i>Demo</a>
+        <a href="#" target="_blank" class="btn btn-ghost" id="pmPaper" style="display:none"><i class="bi bi-file-earmark-text me-2"></i>Paper</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+<script>
+  // Initialize AOS
+  AOS.init({duration:800, once:true});
+
+  // Animate skill bars when section enters view
+  const io = new IntersectionObserver(entries => {
+    entries.forEach(e=>{
+      if(e.isIntersecting){
+        e.target.querySelectorAll('.skill-fill').forEach(el=>{
+          const target = el.style.getPropertyValue('--target') || '0%';
+          el.style.width = target;
+        });
+      }
+    });
+  }, {threshold: 0.3});
+  document.querySelectorAll('#skills .card-ghost').forEach(card => io.observe(card));
+
+  // Projects filter
+  document.querySelectorAll('.filter .btn').forEach(btn=>{
+    btn.addEventListener('click', ()=>{
+      document.querySelectorAll('.filter .btn').forEach(b=>b.classList.remove('active'));
+      btn.classList.add('active');
+      const f = btn.getAttribute('data-filter');
+      document.querySelectorAll('#projectGrid .project-card').forEach(card=>{
+        const show = (f === 'all') || (card.dataset.category === f);
+        card.style.display = show ? '' : 'none';
+      });
+      updateCounts();
+    });
+  });
+
+  // Project modal
+  function openProjectModal(trigger){
+    const d = trigger.dataset;
+    document.getElementById('pmTitle').textContent = d.title || 'Project';
+    document.getElementById('pmImg').src = d.img || '';
+    document.getElementById('pmImg').alt = d.title || 'Project image';
+    document.getElementById('pmStack').textContent = d.stack || '';
+    document.getElementById('pmYear').textContent = d.year || '';
+    document.getElementById('pmDesc').textContent = d.desc || '';
+    const code = document.getElementById('pmCode');
+    const demo = document.getElementById('pmDemo');
+    const paper = document.getElementById('pmPaper');
+    code.href = d.code || '#';
+    demo.href = d.demo || '#';
+    if(d.paper){ paper.href = d.paper; paper.style.display='inline-block'; } else { paper.style.display='none'; }
+    const modal = new bootstrap.Modal(document.getElementById('projectModal'));
+    modal.show();
+  }
+
+  // BibTeX copy
+  function copyBib(btn){
+    const text = btn.getAttribute('data-bibtex') || '';
+    navigator.clipboard.writeText(text).then(()=>{
+      btn.innerHTML = '<i class="bi bi-check2 me-1"></i>Copied';
+      setTimeout(()=> btn.innerHTML = '<i class="bi bi-clipboard me-1"></i>BibTeX', 1200);
+    });
+  }
+
+  // Contact form (mailto fallback)
+  function sendMail(e){
+    e.preventDefault();
+    const name=document.getElementById('cname').value.trim();
+    const email=document.getElementById('cemail').value.trim();
+    const msg=document.getElementById('cmsg').value.trim();
+    const subject=encodeURIComponent('Portfolio contact from '+name);
+    const body=encodeURIComponent('From: '+name+' ('+email+')\n\n'+msg);
+    window.location.href='mailto:nowshintajniya@gmail.com?subject='+subject+'&body='+body;
+    const status=document.getElementById('formStatus');
+    status.textContent='Opening your email client...';
+    status.classList.add('muted');
+  }
+
+  // Back to top
+  const backBtn=document.getElementById('backToTop');
+  window.addEventListener('scroll', ()=>{
+    if(window.scrollY>360){ backBtn.classList.add('show'); } else { backBtn.classList.remove('show'); }
+  });
+  backBtn.addEventListener('click', ()=> window.scrollTo({top:0, behavior:'smooth'}));
+
+  // Counters (publications = items in #pubList only)
+  function updateCounts(){
+    const projVisible=[...document.querySelectorAll('#projectGrid .project-card')].filter(c=>c.style.display!=='none').length;
+    const pubs=document.querySelectorAll('#pubList .pub-item').length;
+    document.getElementById('projCount').textContent=projVisible;
+    document.getElementById('pubCount').textContent=pubs;
+  }
+  updateCounts();
+
+  // Last updated
+  document.getElementById('lastUpdated').textContent = new Date().toLocaleDateString(undefined, {year:'numeric', month:'short'});
+
+  // THEME: Day/Night with persistence
+  (function(){
+    const html = document.documentElement;
+    const btn = document.getElementById('themeToggle');
+    const icon = document.getElementById('themeIcon');
+
+    function systemPrefersDark(){ return window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches; }
+
+    function applyTheme(mode){
+      // mode: 'light' | 'dark' | 'auto'
+      html.setAttribute('data-theme', mode === 'auto' ? (systemPrefersDark() ? 'dark' : 'light') : mode);
+      localStorage.setItem('theme-mode', mode);
+      const effective = html.getAttribute('data-theme');
+      icon.className = effective === 'dark' ? 'bi bi-brightness-high me-1' : 'bi bi-moon-stars me-1';
+      btn.setAttribute('aria-pressed', effective === 'dark');
+      btn.setAttribute('aria-label', effective === 'dark' ? 'Switch to day mode' : 'Switch to night mode');
+    }
+
+    function initTheme(){
+      const saved = localStorage.getItem('theme-mode');
+      if(saved === 'light' || saved === 'dark' || saved === 'auto'){
+        applyTheme(saved);
+      }else{
+        applyTheme('auto');
+      }
+    }
+
+    btn.addEventListener('click', ()=>{
+      const current = localStorage.getItem('theme-mode') || 'auto';
+      const next = current === 'light' ? 'dark' : current === 'dark' ? 'auto' : 'light';
+      applyTheme(next);
+    });
+
+    if(window.matchMedia){
+      window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', ()=>{
+        if((localStorage.getItem('theme-mode') || 'auto') === 'auto'){
+          applyTheme('auto');
+        }
+      });
+    }
+
+    initTheme();
+  })();
+</script>
+</body>
+</html>

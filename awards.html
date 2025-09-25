@@ -1,0 +1,801 @@
+<!doctype html>
+<html lang="en" data-theme="auto">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Tajniya Nowshin Ome — Portfolio</title>
+
+  <!-- Meta / SEO -->
+  <meta name="description" content="Portfolio of Tajniya Nowshin Ome — CSE student, NLP researcher, and front-end designer. Explore academics, research, projects, awards, and extracurriculars." />
+  <meta name="author" content="Tajniya Nowshin Ome" />
+  <meta name="theme-color" content="#ffffff" />
+  <meta property="og:title" content="Tajniya Nowshin Ome — Portfolio" />
+  <meta property="og:description" content="CSE student, researcher, and designer focused on NLP, summarization, and front-end." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://your-domain.com/" />
+  <meta property="og:image" content="https://images.unsplash.com/photo-1611239679308-6d6a0ac9f0ad?q=80&w=1200&auto=format&fit=crop" />
+  <meta name="twitter:card" content="summary_large_image" />
+
+  <!-- Fonts: Inter (body) + Merriweather (headings) -->
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Merriweather:wght@400;700;900&display=swap" rel="stylesheet">
+
+  <!-- Bootstrap 5 + Icons -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
+
+  <!-- AOS -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" rel="stylesheet">
+
+  <style>
+.card-slider {
+  flex: 0 0 250px;
+  border-radius: 12px;
+  box-shadow: 0 6px 15px rgba(0,0,0,0.1);
+  transition: transform 0.3s, box-shadow 0.3s;
+  cursor: pointer;
+  overflow: hidden; /* important to crop zoomed image */
+}
+
+.card-slider:hover {
+  transform: scale(1.05); /* zoom the whole card */
+  box-shadow: 0 12px 25px rgba(0,0,0,0.2);
+  z-index: 15;
+}
+
+.card-slider img {
+  width: 100%;
+  height: 200px; /* adjust height as needed */
+  object-fit: cover; /* cover ensures the image fills container */
+  transition: transform 0.5s ease;
+}
+
+.card-slider:hover img {
+  transform: scale(1.1); /* zoom the image more */
+}
+
+.card-body {
+  text-align: center;
+  padding: 10px;
+}
+  .section-title {
+    text-align: center;
+    margin: 40px 0 20px;
+    color: #5993ce;
+    font-weight: 600;
+  }
+  .card-container {
+    display: flex;
+    gap: 20px;
+    overflow-x: auto;
+    padding-bottom: 10px;
+    scroll-behavior: smooth;
+  }
+  .card-container::-webkit-scrollbar {
+    height: 8px;
+  }
+  .card-container::-webkit-scrollbar-thumb {
+    background-color: #5993ce;
+    border-radius: 4px;
+  }
+  .card-slider {
+    flex: 0 0 250px;
+    border-radius: 12px;
+    box-shadow: 0 6px 15px rgba(0,0,0,0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
+  }
+  .card-slider:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 20px rgba(0,0,0,0.15);
+  }
+  .card-slider img {
+    height: 150px;
+    object-fit: contain;
+    border-top-left-radius: 12px;
+    border-top-right-radius: 12px;
+  }
+  .card-body {
+    text-align: center;
+  }
+  .btn-custom {
+    color: #3790de;
+    border: 1px solid #3790de;
+    background: transparent;
+    transition: 0.3s;
+  }
+  .btn-custom:hover {
+    background: #3790de;
+    color: #fff;
+  }
+  
+    /* THEME TOKENS */
+    :root{
+      --font-body: 'Inter', system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+      --font-head: 'Merriweather', Georgia, 'Times New Roman', serif;
+
+      /* Light (Day) */
+      --bg: #ffffff;
+      --bg-2: #f6f8fc;
+      --surface: #ffffff;
+      --text: #192233;
+      --muted: #3c99c4;
+      --border: #e5ebf3;
+      --card: linear-gradient(180deg, rgba(10, 20, 40, 0.02), rgba(10, 20, 40, 0.01));
+      --accent: #3c99c4;
+      --accent-2: #48b5ff;
+      --navbar-bg: rgba(255,255,255,0.8);
+      --shadow: 0 6px 24px rgba(10, 20, 40, 0.06);
+      --btn-ghost-bg: rgba(10,20,40,0.04);
+      --btn-soft-bg: rgba(91, 60, 196, 0.08);
+      --navbar-toggle: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='%2320293a' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+    }
+    [data-theme="dark"]{
+      .fw-semibold{
+  color: #6297e1;
+       }
+      --bg: #0c1222;
+      --bg-2: #101827;
+      --surface: #111a2b;
+      --text: #f4f8ff;
+      --muted: #7fa6dc;
+      --border: #102542;
+      --card: linear-gradient(180deg, rgba(255,255,255,0.04), rgba(255,255,255,0.02));
+      --accent: #4d51cb;
+      --accent-2: #95cbe9;
+      --navbar-bg: rgba(0,0,0,0.28);
+      --shadow: 0 6px 28px rgba(0, 0, 0, 0.25);
+      --btn-ghost-bg: rgba(255,255,255,0.06);
+      --btn-soft-bg: rgba(125, 98, 227, 0.16);
+      
+      --navbar-toggle: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='%23e9eef8' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+    }
+
+    html, body{
+      height: 100%;
+      color: var(--text);
+      font-family: var(--font-body);
+      background: linear-gradient(180deg, var(--bg) 0%, var(--bg-2) 100%);
+    }
+
+    /* Typography */
+    h1,h2,h3,h4,h5,h6{
+      font-family: var(--font-head);
+      letter-spacing: 0.2px;
+      color: var(--text);
+      margin-bottom: .5rem;
+    }
+    h1{ font-weight: 900; }
+    h2,h3{ font-weight: 700; }
+    .lead{ color: var(--muted); }
+    .muted{ color: var(--muted) !important; }
+
+    /* Navbar */
+    .navbar{
+      background: var(--navbar-bg);
+      backdrop-filter: blur(8px);
+      border-bottom: 1px solid var(--border);
+    }
+    .navbar .nav-link{ color: var(--text); opacity:.9; }
+    .navbar .nav-link:hover{ opacity:1; }
+    .navbar .navbar-toggler-icon{ background-image: var(--navbar-toggle); }
+
+    /* Hero */
+    .hero{ min-height: 66vh; display:flex; align-items:center; }
+    .stat{ background: var(--card); border: 1px solid var(--border); border-radius: 14px; padding: 1rem; box-shadow: var(--shadow); }
+
+    /* Cards */
+    .card-ghost{ background: var(--card); border: 1px solid var(--border); border-radius: 14px; box-shadow: var(--shadow); }
+    .project-img{ height: 170px; object-fit: cover; border-radius: 10px; }
+
+    /* Buttons */
+    .btn-primary{
+      --bs-btn-bg: var(--accent);
+      --bs-btn-border-color: var(--accent);
+      --bs-btn-hover-bg: #4d2fb3;
+      --bs-btn-hover-border-color: #4d2fb3;
+      --bs-btn-active-bg: #452aa4;
+      --bs-btn-active-border-color: #452aa4;
+    }
+    .btn-ghost{
+      color: var(--text);
+      border: 1px solid var(--border);
+      background: transparent;
+    }
+    .btn-ghost:hover{ background: var(--btn-ghost-bg); }
+    .btn-soft{
+      color: var(--text);
+      background: var(--btn-soft-bg);
+      border: 1px solid var(--border);
+    }
+
+    /* Chips */
+    .chip{
+      display:inline-flex; align-items:center; gap:.4rem;
+      background: var(--btn-ghost-bg);
+      border: 1px solid var(--border);
+      color: var(--text);
+      border-radius: 999px; padding:.25rem .6rem; font-size:.82rem;
+    }
+
+.read-btn {
+  background: linear-gradient(135deg, #4a90e2, #0073e6);
+  border: none;
+  border-radius: 8px;
+  padding: 10px 20px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+}
+
+.read-btn a {
+  text-decoration: none;
+  color: #fff;
+  font-weight: 600;
+  font-size: 16px;
+  font-family: "Inter", sans-serif;
+}
+
+.read-btn:hover {
+  background: linear-gradient(135deg, #0073e6, #005bb5);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 12px rgba(0,0,0,0.2);
+}
+
+    /* Timeline */
+    .timeline{ position:relative; margin-left:1rem; padding-left:1rem; }
+    .timeline::before{ content:""; position:absolute; left:0; top:0; bottom:0; width:2px; background: var(--border); border-radius: 1px; }
+    .t-item{ position:relative; margin-bottom:1.25rem; }
+    .t-item::before{
+      content:""; position:absolute; left:-1.25rem; top:.3rem;
+      width:10px;height:10px; border-radius:50%;
+      background: linear-gradient(180deg, var(--accent), var(--accent-2));
+      box-shadow: 0 0 0 4px rgba(91,60,196,0.18);
+    }
+
+    /* Skill bars */
+    .skill-bar{ height:10px; border-radius:8px; background: rgba(120,130,150,0.12); overflow:hidden; }
+    .skill-fill{ height:100%; border-radius:8px; background:linear-gradient(90deg, var(--accent), var(--accent-2)); width:0; transition:width 1.1s ease; }
+
+    /* Filter */
+    .filter .btn{ border:1px solid var(--border); color: var(--text); }
+    .filter .btn.active{ background: linear-gradient(90deg, var(--accent), var(--accent-2)); color:#fff; border-color: transparent; }
+
+    footer{ border-top:1px solid var(--border); color: var(--muted); }
+
+    #backToTop{ position:fixed; right:16px; bottom:16px; z-index:1080; opacity:0; visibility:hidden; transition:all .2s ease; }
+    #backToTop.show{ opacity:1; visibility:visible; }
+
+    @media (max-width:767px){
+      .hero{ min-height:56vh; padding: 2rem 0; }
+      .project-img{ height:160px; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- NAVBAR -->
+<nav class="navbar navbar-expand-lg sticky-top py-3">
+  <div class="container">
+    <a class="navbar-brand d-flex align-items-center gap-2" href="#">
+      <div class="rounded-circle" style="width:38px;height:38px;display:flex;align-items:center;justify-content:center;background:linear-gradient(180deg,#fff,rgba(255,255,255,0.7));color:var(--accent);font-weight:800;border:1px solid var(--border)">TN</div>
+      <span class="fw-semibold">Tajniya Nowshin Ome</span>
+    </a>
+
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navmenu" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navmenu">
+      <ul class="navbar-nav ms-auto align-items-center">
+        <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+        <!--<li class="nav-item"><a class="nav-link" href="index.html">Academics</a></li>
+        <li class="nav-item"><a class="nav-link" href="index.html">Research</a></li>
+        <li class="nav-item"><a class="nav-link" href="projects.html">Projects</a></li>
+        <li class="nav-item"><a class="nav-link" href="index.html">Experience</a></li>
+        <li class="nav-item"><a class="nav-link" href="awards.html">Awards</a></li>
+        <li class="nav-item"><a class="nav-link" href="index.html">Skills</a></li>
+        <li class="nav-item"><a class="nav-link" href="index.html">Contact</a></li>-->
+        <li class="nav-item ms-2">
+          <button class="btn btn-soft" id="themeToggle" type="button" aria-label="Toggle theme">
+            <i class="bi bi-moon-stars me-1" id="themeIcon"></i> Theme
+          </button>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<!-- HERO / Title -->
+<header class="py-5">
+  <div class="container text-center">
+    <h1 class="mb-1">Awards And Certificates</h1>
+    <p class="lead muted">Recognized with awards and certifications for innovation, leadership, and impactful achievements.</p>
+  </div>
+</header>
+
+
+<div class="container">
+
+  <!-- Awards Section -->
+  <h2 class="section-title">Awards</h2>
+  <div class="card-container">
+    <!-- Award 1 -->
+    <div class="card card-slider">
+      <img src="https://media.licdn.com/dms/image/v2/D5622AQGckIn6VbYuuw/feedshare-shrink_800/B56ZSjCXGSHQAk-/0/1737902094892?e=1761782400&v=beta&t=1AJV1T6mh5REJrBXqrOdWMDTTwnM0Pw5yxsxnXncVD8" alt="Award 1">
+      <div class="card-body">
+        <h6 class="card-title">Best Secretariet Volunteer 2024</h6>
+        
+        <button type="button" class="btn btn-sm btn-custom" data-bs-toggle="modal" data-bs-target="#viewModal" data-img="https://media.licdn.com/dms/image/v2/D5622AQGckIn6VbYuuw/feedshare-shrink_800/B56ZSjCXGSHQAk-/0/1737902094892?e=1761782400&v=beta&t=1AJV1T6mh5REJrBXqrOdWMDTTwnM0Pw5yxsxnXncVD8" data-title="Best Secretariet Volunteer">
+          View
+        </button>
+      </div>
+    </div>
+
+    <!-- Award 2 -->
+    <div class="card card-slider">
+      <img src="https://media.licdn.com/dms/image/v2/D5622AQGStwJaEjLXNw/feedshare-shrink_1280/feedshare-shrink_1280/0/1727424314002?e=1761782400&v=beta&t=CNaihcZ3-BruAHNe4sViVCDGZP_i71m_pBisxIs9W3g" alt="Award 2">
+      <div class="card-body">
+        <h6 class="card-title">Unswerving Contribution Award in COMPAS24</h6>
+      
+        <button type="button" class="btn btn-sm btn-custom" data-bs-toggle="modal" data-bs-target="#viewModal" data-img="https://media.licdn.com/dms/image/v2/D5622AQGStwJaEjLXNw/feedshare-shrink_1280/feedshare-shrink_1280/0/1727424314002?e=1761782400&v=beta&t=CNaihcZ3-BruAHNe4sViVCDGZP_i71m_pBisxIs9W3g" data-title="Unswerving Contribution Award in COMPAS24">
+          View
+        </button>
+      </div>
+    </div>
+
+    <!-- Award 3 -->
+    <div class="card card-slider">
+      <img src="image2.png" alt="Award 3">
+      <div class="card-body">
+        <h6 class="card-title">Recognition of Deputy Head in Hult Prize 24</h6>
+        
+        <button type="button" class="btn btn-sm btn-custom" data-bs-toggle="modal" data-bs-target="#viewModal" data-img="image2.png" data-title="Award Title 3">
+          View
+        </button>
+      </div>
+    </div>
+
+        <!-- Award 3 -->
+    <div class="card card-slider">
+      <img src="image3.png" alt="Award 3">
+      <div class="card-body">
+        <h6 class="card-title">Recognition of Design Co-Chair in ICRCS 24</h6>
+        
+        <button type="button" class="btn btn-sm btn-custom" data-bs-toggle="modal" data-bs-target="#viewModal" data-img="image3.png" data-title="Award Title 3">
+          View
+        </button>
+      </div>
+    </div>
+
+        <!-- Award 3 -->
+    <div class="card card-slider">
+      <img src="image4.png" alt="Award 3">
+      <div class="card-body">
+        <h6 class="card-title">Recognized as Graphics Designer in IIUC CS session24 </h6>
+        
+        <button type="button" class="btn btn-sm btn-custom" data-bs-toggle="modal" data-bs-target="#viewModal" data-img="image4.png" data-title="Award Title 3">
+          View
+        </button>
+      </div>
+    </div>
+
+        <!-- Award 3 -->
+    <div class="card card-slider">
+      <img src="image5.png" alt="Award 3">
+      <div class="card-body">
+        <h6 class="card-title">Unswerving Contribution Award in QPAIN 25</h6>
+        
+        <button type="button" class="btn btn-sm btn-custom" data-bs-toggle="modal" data-bs-target="#viewModal" data-img="image5.png" data-title="Award Title 3">
+          View
+        </button>
+      </div>
+    </div>
+
+            <!-- Award 3 -->
+    <div class="card card-slider">
+      <img src="image.png" alt="Award 3">
+      <div class="card-body">
+        <h6 class="card-title">Recognition of Lead Designer Of CS session25</h6>
+        
+        <button type="button" class="btn btn-sm btn-custom" data-bs-toggle="modal" data-bs-target="#viewModal" data-img="image.png" data-title="Award Title 3">
+          View
+        </button>
+      </div>
+    </div>
+
+            <!-- Award 3 -->
+    <div class="card card-slider">
+      <img src="image6.png" alt="Award 3">
+      <div class="card-body">
+        <h6 class="card-title">Exceptional Contribution Award 2024</h6>
+        
+        <button type="button" class="btn btn-sm btn-custom" data-bs-toggle="modal" data-bs-target="#viewModal" data-img="image6.png" data-title="Award Title 3">
+          View
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <br><br>
+
+  <!-- Certificates Section -->
+  <h2 class="section-title">Certificates</h2>
+  <div class="card-container">
+    <!-- Certificate 1 -->
+    <div class="card card-slider">
+      <img src="ct1.png" alt="Certificate 1">
+      <div class="card-body">
+        <h6 class="card-title">Certificate 1</h6>
+        <p class="card-text"></p>
+        <button type="button" class="btn btn-sm btn-custom" data-bs-toggle="modal" data-bs-target="#viewModal" data-img="ct1.png" data-title="Certificate 1">
+          View
+        </button>
+      </div>
+    </div>
+
+    <!-- Certificate 2 -->
+    <div class="card card-slider">
+      <img src="ct2.png" alt="Certificate 2">
+      <div class="card-body">
+        <h6 class="card-title">Certificate 2</h6>
+        <p class="card-text"></p>
+        <button type="button" class="btn btn-sm btn-custom" data-bs-toggle="modal" data-bs-target="#viewModal" data-img="ct2.png" data-title="Certificate 2">
+          View
+        </button>
+      </div>
+    </div>
+
+    <!-- Certificate 3 -->
+    <div class="card card-slider">
+      <img src="ct3.png" alt="Certificate 3">
+      <div class="card-body">
+        <h6 class="card-title">Certificate 3</h6>
+        <p class="card-text"></p>
+        <button type="button" class="btn btn-sm btn-custom" data-bs-toggle="modal" data-bs-target="#viewModal" data-img="ct3.png" data-title="Certificate 3">
+          View
+        </button>
+      </div>
+    </div>
+        <!-- Certificate 4 -->
+    <div class="card card-slider">
+      <img src="ct4.png" alt="Certificate 4">
+      <div class="card-body">
+        <h6 class="card-title">Certificate 4</h6>
+        <p class="card-text"></p>
+        <button type="button" class="btn btn-sm btn-custom" data-bs-toggle="modal" data-bs-target="#viewModal" data-img="ct4.png" data-title="Certificate 4">
+          View
+        </button>
+      </div>
+    </div>
+
+        <!-- Certificate 5 -->
+    <div class="card card-slider">
+      <img src="ct5.png" alt="Certificate 3">
+      <div class="card-body">
+        <h6 class="card-title">Certificate 5</h6>
+        <p class="card-text"></p>
+        <button type="button" class="btn btn-sm btn-custom" data-bs-toggle="modal" data-bs-target="#viewModal" data-img="ct5.png" data-title="Certificate 5">
+          View
+        </button>
+      </div>
+    </div>
+
+        <!-- Certificate 6 -->
+    <div class="card card-slider">
+      <img src="ct6.png" alt="Certificate 3">
+      <div class="card-body">
+        <h6 class="card-title">Certificate 6</h6>
+        <p class="card-text"></p>
+        <button type="button" class="btn btn-sm btn-custom" data-bs-toggle="modal" data-bs-target="#viewModal" data-img="ct6.png" data-title="Certificate 6">
+          View
+        </button>
+      </div>
+    </div>
+
+        <!-- Certificate 7 -->
+    <div class="card card-slider">
+      <img src="ct7.png" alt="Certificate 7">
+      <div class="card-body">
+        <h6 class="card-title">Certificate 7</h6>
+        <p class="card-text"></p>
+        <button type="button" class="btn btn-sm btn-custom" data-bs-toggle="modal" data-bs-target="#viewModal" data-img="ct7.png" data-title="Certificate 7">
+          View
+        </button>
+      </div>
+    </div>
+
+            <!-- Certificate 8-->
+    <div class="card card-slider">
+      <img src="ct8.png" alt="Certificate 7">
+      <div class="card-body">
+        <h6 class="card-title">Certificate 8</h6>
+        <p class="card-text"></p>
+        <button type="button" class="btn btn-sm btn-custom" data-bs-toggle="modal" data-bs-target="#viewModal" data-img="ct8.png" data-title="Certificate 8">
+          View
+        </button>
+      </div>
+    </div>
+
+            <!-- Certificate 9 -->
+    <div class="card card-slider">
+      <img src="ct9.png" alt="Certificate 7">
+      <div class="card-body">
+        <h6 class="card-title">Certificate 9</h6>
+        <p class="card-text"></p>
+        <button type="button" class="btn btn-sm btn-custom" data-bs-toggle="modal" data-bs-target="#viewModal" data-img="ct9.png" data-title="Certificate 9">
+          View
+        </button>
+      </div>
+    </div>
+
+            <!-- Certificate 10 -->
+    <div class="card card-slider">
+      <img src="ct10.png" alt="Certificate 7">
+      <div class="card-body">
+        <h6 class="card-title">Certificate 10</h6>
+        <p class="card-text"></p>
+        <button type="button" class="btn btn-sm btn-custom" data-bs-toggle="modal" data-bs-target="#viewModal" data-img="ct10.png" data-title="Certificate 10">
+          View
+        </button>
+      </div>
+    </div>
+
+                <!-- Certificate 11 -->
+    <div class="card card-slider">
+      <img src="ct11.png" alt="Certificate 7">
+      <div class="card-body">
+        <h6 class="card-title">Certificate 11</h6>
+        <p class="card-text"></p>
+        <button type="button" class="btn btn-sm btn-custom" data-bs-toggle="modal" data-bs-target="#viewModal" data-img="ct11.png" data-title="Certificate 11">
+          View
+        </button>
+      </div>
+    </div>
+
+                <!-- Certificate 12 -->
+    <div class="card card-slider">
+      <img src="ct12.png" alt="Certificate 7">
+      <div class="card-body">
+        <h6 class="card-title">Certificate 12</h6>
+        <p class="card-text"></p>
+        <button type="button" class="btn btn-sm btn-custom" data-bs-toggle="modal" data-bs-target="#viewModal" data-img="ct12.png" data-title="Certificate 12">
+          View
+        </button>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- SINGLE MODAL FOR ALL CARDS -->
+<div class="modal fade" id="viewModal" tabindex="-1" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered modal-lg">
+    <div class="modal-content">
+      <div class="modal-body p-0">
+        <img id="modalImg" src="" class="img-fluid w-100" alt="">
+      </div>
+      <div class="modal-footer">
+        <h6 id="modalTitle" class="me-auto"></h6>
+        <button type="button" class="btn btn-secondary btn-sm" data-bs-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!-- FOOTER -->
+<footer class="py-4">
+  <div class="container d-flex flex-column flex-md-row justify-content-between align-items-center gap-2">
+    <div>© <strong>Tajniya Nowshin Ome</strong></div>
+   
+    <!-- Add this line -->
+    <div class="small">Last updated: <span id="lastUpdated"></span></div>
+  </div>
+</footer>
+
+<!-- Back to top -->
+<button id="backToTop" class="btn btn-primary rounded-circle shadow" aria-label="Back to top"><i class="bi bi-arrow-up"></i></button>
+
+<!-- Project Modal -->
+<div class="modal fade" id="projectModal" tabindex="-1" aria-hidden="true">
+  <div class="modal-dialog modal-lg modal-dialog-centered">
+    <div class="modal-content card-ghost">
+      <div class="modal-header border-0">
+        <h5 class="modal-title" id="pmTitle">Project</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body pt-0">
+        <img id="pmImg" src="" alt="" class="img-fluid rounded mb-3" style="max-height:320px;object-fit:cover">
+        <div class="d-flex flex-wrap gap-2 mb-2">
+          <span class="chip" id="pmStack"></span>
+          <span class="chip" id="pmYear"></span>
+        </div>
+        <p class="muted" id="pmDesc"></p>
+      </div>
+      <div class="modal-footer border-0">
+        <a href="#" target="_blank" class="btn btn-ghost" id="pmCode"><i class="bi bi-code-slash me-2"></i>Code</a>
+        <a href="#" target="_blank" class="btn btn-ghost" id="pmDemo"><i class="bi bi-box-arrow-up-right me-2"></i>Demo</a>
+        <a href="#" target="_blank" class="btn btn-ghost" id="pmPaper" style="display:none"><i class="bi bi-file-earmark-text me-2"></i>Paper</a>
+      </div>
+    
+  <div class="modal fade" id="viewModal1" tabindex="-1" aria-labelledby="viewModalLabel1" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered modal-lg">
+    <div class="modal-content">
+      <div class="modal-body p-0">
+        <img src="images/cert1.png" class="img-fluid w-100" alt="Certificate 1">
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary btn-sm" data-bs-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+</div>
+  </div>
+<!-- JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+<script>
+     const viewModal = document.getElementById('viewModal');
+viewModal.addEventListener('show.bs.modal', event => {
+  const button = event.relatedTarget;
+  const imgSrc = button.getAttribute('data-img');
+  const title = button.getAttribute('data-title');
+
+  const modalImg = document.getElementById('modalImg');
+  const modalTitle = document.getElementById('modalTitle');
+
+  modalImg.src = imgSrc;
+  modalImg.alt = title;
+  modalTitle.textContent = title;
+});
+  // Initialize AOS
+  AOS.init({duration:800, once:true});
+
+  // Animate skill bars when section enters view
+  const io = new IntersectionObserver(entries => {
+    entries.forEach(e=>{
+      if(e.isIntersecting){
+        e.target.querySelectorAll('.skill-fill').forEach(el=>{
+          const target = el.style.getPropertyValue('--target') || '0%';
+          el.style.width = target;
+        });
+      }
+    });
+  }, {threshold: 0.3});
+  document.querySelectorAll('#skills .card-ghost').forEach(card => io.observe(card));
+
+  // Projects filter
+  document.querySelectorAll('.filter .btn').forEach(btn=>{
+    btn.addEventListener('click', ()=>{
+      document.querySelectorAll('.filter .btn').forEach(b=>b.classList.remove('active'));
+      btn.classList.add('active');
+      const f = btn.getAttribute('data-filter');
+      document.querySelectorAll('#projectGrid .project-card').forEach(card=>{
+        const show = (f === 'all') || (card.dataset.category === f);
+        card.style.display = show ? '' : 'none';
+      });
+      updateCounts();
+    });
+  });
+
+  // Project modal
+  function openProjectModal(trigger){
+    const d = trigger.dataset;
+    document.getElementById('pmTitle').textContent = d.title || 'Project';
+    document.getElementById('pmImg').src = d.img || '';
+    document.getElementById('pmImg').alt = d.title || 'Project image';
+    document.getElementById('pmStack').textContent = d.stack || '';
+    document.getElementById('pmYear').textContent = d.year || '';
+    document.getElementById('pmDesc').textContent = d.desc || '';
+    const code = document.getElementById('pmCode');
+    const demo = document.getElementById('pmDemo');
+    const paper = document.getElementById('pmPaper');
+    code.href = d.code || '#';
+    demo.href = d.demo || '#';
+    if(d.paper){ paper.href = d.paper; paper.style.display='inline-block'; } else { paper.style.display='none'; }
+    const modal = new bootstrap.Modal(document.getElementById('projectModal'));
+    modal.show();
+  }
+
+  // BibTeX copy
+  function copyBib(btn){
+    const text = btn.getAttribute('data-bibtex') || '';
+    navigator.clipboard.writeText(text).then(()=>{
+      btn.innerHTML = '<i class="bi bi-check2 me-1"></i>Copied';
+      setTimeout(()=> btn.innerHTML = '<i class="bi bi-clipboard me-1"></i>BibTeX', 1200);
+    });
+  }
+
+  // Contact form (mailto fallback)
+  function sendMail(e){
+    e.preventDefault();
+    const name=document.getElementById('cname').value.trim();
+    const email=document.getElementById('cemail').value.trim();
+    const msg=document.getElementById('cmsg').value.trim();
+    const subject=encodeURIComponent('Portfolio contact from '+name);
+    const body=encodeURIComponent('From: '+name+' ('+email+')\n\n'+msg);
+    window.location.href='mailto:nowshintajniya@gmail.com?subject='+subject+'&body='+body;
+    const status=document.getElementById('formStatus');
+    status.textContent='Opening your email client...';
+    status.classList.add('muted');
+  }
+
+  // Back to top
+  const backBtn=document.getElementById('backToTop');
+  window.addEventListener('scroll', ()=>{
+    if(window.scrollY>360){ backBtn.classList.add('show'); } else { backBtn.classList.remove('show'); }
+  });
+  backBtn.addEventListener('click', ()=> window.scrollTo({top:0, behavior:'smooth'}));
+
+  
+   // Counters (publications = items in #pubList only)
+  function updateCounts(){
+    // These lines are safe because querySelectorAll just returns an empty list if nothing is found
+    const projVisible=[...document.querySelectorAll('#projectGrid .project-card')].filter(c=>c.style.display!=='none').length;
+    const pubs=document.querySelectorAll('#pubList .pub-item').length;
+
+    // Get the counter elements
+    const projCounter = document.getElementById('projCount');
+    const pubCounter = document.getElementById('pubCount');
+
+    // ONLY update them if they exist on the page
+    if (projCounter) {
+      projCounter.textContent = projVisible;
+    }
+    if (pubCounter) {
+      pubCounter.textContent = pubs;
+    }
+  }
+  updateCounts();
+
+  // Last updated
+  document.getElementById('lastUpdated').textContent = new Date().toLocaleDateString(undefined, {year:'numeric', month:'short'});
+
+  // THEME: Day/Night with persistence
+  (function(){
+    const html = document.documentElement;
+    const btn = document.getElementById('themeToggle');
+    const icon = document.getElementById('themeIcon');
+
+    function systemPrefersDark(){ return window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches; }
+
+    function applyTheme(mode){
+      // mode: 'light' | 'dark' | 'auto'
+      html.setAttribute('data-theme', mode === 'auto' ? (systemPrefersDark() ? 'dark' : 'light') : mode);
+      localStorage.setItem('theme-mode', mode);
+      const effective = html.getAttribute('data-theme');
+      icon.className = effective === 'dark' ? 'bi bi-brightness-high me-1' : 'bi bi-moon-stars me-1';
+      btn.setAttribute('aria-pressed', effective === 'dark');
+      btn.setAttribute('aria-label', effective === 'dark' ? 'Switch to day mode' : 'Switch to night mode');
+    }
+
+    function initTheme(){
+      const saved = localStorage.getItem('theme-mode');
+      if(saved === 'light' || saved === 'dark' || saved === 'auto'){
+        applyTheme(saved);
+      }else{
+        applyTheme('auto');
+      }
+    }
+
+    btn.addEventListener('click', ()=>{
+      const current = localStorage.getItem('theme-mode') || 'auto';
+      const next = current === 'light' ? 'dark' : current === 'dark' ? 'auto' : 'light';
+      applyTheme(next);
+    });
+
+    if(window.matchMedia){
+      window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', ()=>{
+        if((localStorage.getItem('theme-mode') || 'auto') === 'auto'){
+          applyTheme('auto');
+        }
+      });
+    }
+
+    initTheme();
+  })();
+</script>
+</body>
+</html>

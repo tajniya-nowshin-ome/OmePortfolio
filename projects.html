@@ -1,0 +1,794 @@
+<!doctype html>
+<html lang="en" data-theme="auto">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Tajniya Nowshin Ome — Portfolio</title>
+
+    <!-- Meta / SEO -->
+    <meta name="description"
+        content="Portfolio of Tajniya Nowshin Ome — CSE student, NLP researcher, and front-end designer. Explore academics, research, projects, awards, and extracurriculars." />
+    <meta name="author" content="Tajniya Nowshin Ome" />
+    <meta name="theme-color" content="#ffffff" />
+    <meta property="og:title" content="Tajniya Nowshin Ome — Portfolio" />
+    <meta property="og:description"
+        content="CSE student, researcher, and designer focused on NLP, summarization, and front-end." />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://your-domain.com/" />
+    <meta property="og:image"
+        content="https://images.unsplash.com/photo-1611239679308-6d6a0ac9f0ad?q=80&w=1200&auto=format&fit=crop" />
+    <meta name="twitter:card" content="summary_large_image" />
+
+    <!-- Fonts: Inter (body) + Merriweather (headings) -->
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Merriweather:wght@400;700;900&display=swap"
+        rel="stylesheet">
+
+    <!-- Bootstrap 5 + Icons -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
+
+    <!-- AOS -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" rel="stylesheet">
+
+    <style>
+        /* THEME TOKENS */
+        :root {
+            --font-body: 'Inter', system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+            --font-head: 'Merriweather', Georgia, 'Times New Roman', serif;
+
+            /* Light (Day) */
+            --bg: #ffffff;
+            --bg-2: #f6f8fc;
+            --surface: #ffffff;
+            --text: #192233;
+            --muted: #3c99c4;
+            --border: #e5ebf3;
+            --card: linear-gradient(180deg, rgba(10, 20, 40, 0.02), rgba(10, 20, 40, 0.01));
+            --accent: #3c99c4;
+            --accent-2: #48b5ff;
+            --navbar-bg: rgba(255, 255, 255, 0.8);
+            --shadow: 0 6px 24px rgba(10, 20, 40, 0.06);
+            --btn-ghost-bg: rgba(10, 20, 40, 0.04);
+            --btn-soft-bg: rgba(91, 60, 196, 0.08);
+            --navbar-toggle: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='%2320293a' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+        }
+
+        [data-theme="dark"] {
+            .fw-semibold {
+                color: #6297e1;
+            }
+
+            --bg: #0c1222;
+            --bg-2: #101827;
+            --surface: #111a2b;
+            --text: #f4f8ff;
+            --muted: #7fa6dc;
+            --border: #102542;
+            --card: linear-gradient(180deg, rgba(255, 255, 255, 0.04), rgba(255, 255, 255, 0.02));
+            --accent: #4d51cb;
+            --accent-2: #95cbe9;
+            --navbar-bg: rgba(0, 0, 0, 0.28);
+            --shadow: 0 6px 28px rgba(0, 0, 0, 0.25);
+            --btn-ghost-bg: rgba(255, 255, 255, 0.06);
+            --btn-soft-bg: rgba(125, 98, 227, 0.16);
+
+            --navbar-toggle: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='%23e9eef8' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+        }
+
+        html,
+        body {
+            height: 100%;
+            color: var(--text);
+            font-family: var(--font-body);
+            background: linear-gradient(180deg, var(--bg) 0%, var(--bg-2) 100%);
+        }
+
+        /* Typography */
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
+            font-family: var(--font-head);
+            letter-spacing: 0.2px;
+            color: var(--text);
+            margin-bottom: .5rem;
+        }
+
+        h1 {
+            font-weight: 900;
+        }
+
+        h2,
+        h3 {
+            font-weight: 700;
+        }
+
+        .lead {
+            color: var(--muted);
+        }
+
+        .muted {
+            color: var(--muted) !important;
+        }
+
+        /* Navbar */
+        .navbar {
+            background: var(--navbar-bg);
+            backdrop-filter: blur(8px);
+            border-bottom: 1px solid var(--border);
+        }
+
+        .navbar .nav-link {
+            color: var(--text);
+            opacity: .9;
+        }
+
+        .navbar .nav-link:hover {
+            opacity: 1;
+        }
+
+        .navbar .navbar-toggler-icon {
+            background-image: var(--navbar-toggle);
+        }
+
+        /* Hero */
+        .hero {
+            min-height: 66vh;
+            display: flex;
+            align-items: center;
+        }
+
+        .stat {
+            background: var(--card);
+            border: 1px solid var(--border);
+            border-radius: 14px;
+            padding: 1rem;
+            box-shadow: var(--shadow);
+        }
+
+        /* Cards */
+        .card-ghost {
+            background: var(--card);
+            border: 1px solid var(--border);
+            border-radius: 14px;
+            box-shadow: var(--shadow);
+        }
+
+        .project-img {
+            height: 170px;
+            object-fit: cover;
+            border-radius: 10px;
+        }
+
+        /* Buttons */
+        .btn-primary {
+            --bs-btn-bg: var(--accent);
+            --bs-btn-border-color: var(--accent);
+            --bs-btn-hover-bg: #4d2fb3;
+            --bs-btn-hover-border-color: #4d2fb3;
+            --bs-btn-active-bg: #452aa4;
+            --bs-btn-active-border-color: #452aa4;
+        }
+
+        .btn-ghost {
+            color: var(--text);
+            border: 1px solid var(--border);
+            background: transparent;
+        }
+
+        .btn-ghost:hover {
+            background: var(--btn-ghost-bg);
+        }
+
+        .btn-soft {
+            color: var(--text);
+            background: var(--btn-soft-bg);
+            border: 1px solid var(--border);
+        }
+
+        /* Chips */
+        .chip {
+            display: inline-flex;
+            align-items: center;
+            gap: .4rem;
+            background: var(--btn-ghost-bg);
+            border: 1px solid var(--border);
+            color: var(--text);
+            border-radius: 999px;
+            padding: .25rem .6rem;
+            font-size: .82rem;
+        }
+
+        .read-btn {
+            background: linear-gradient(135deg, #4a90e2, #0073e6);
+            border: none;
+            border-radius: 8px;
+            padding: 10px 20px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+        }
+
+        .read-btn a {
+            text-decoration: none;
+            color: #fff;
+            font-weight: 600;
+            font-size: 16px;
+            font-family: "Inter", sans-serif;
+        }
+
+        .read-btn:hover {
+            background: linear-gradient(135deg, #0073e6, #005bb5);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Timeline */
+        .timeline {
+            position: relative;
+            margin-left: 1rem;
+            padding-left: 1rem;
+        }
+
+        .timeline::before {
+            content: "";
+            position: absolute;
+            left: 0;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background: var(--border);
+            border-radius: 1px;
+        }
+
+        .t-item {
+            position: relative;
+            margin-bottom: 1.25rem;
+        }
+
+        .t-item::before {
+            content: "";
+            position: absolute;
+            left: -1.25rem;
+            top: .3rem;
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background: linear-gradient(180deg, var(--accent), var(--accent-2));
+            box-shadow: 0 0 0 4px rgba(91, 60, 196, 0.18);
+        }
+
+        /* Skill bars */
+        .skill-bar {
+            height: 10px;
+            border-radius: 8px;
+            background: rgba(120, 130, 150, 0.12);
+            overflow: hidden;
+        }
+
+        .skill-fill {
+            height: 100%;
+            border-radius: 8px;
+            background: linear-gradient(90deg, var(--accent), var(--accent-2));
+            width: 0;
+            transition: width 1.1s ease;
+        }
+
+        /* Filter */
+        .filter .btn {
+            border: 1px solid var(--border);
+            color: var(--text);
+        }
+
+        .filter .btn.active {
+            background: linear-gradient(90deg, var(--accent), var(--accent-2));
+            color: #fff;
+            border-color: transparent;
+        }
+
+        footer {
+            border-top: 1px solid var(--border);
+            color: var(--muted);
+        }
+
+        #backToTop {
+            position: fixed;
+            right: 16px;
+            bottom: 16px;
+            z-index: 1080;
+            opacity: 0;
+            visibility: hidden;
+            transition: all .2s ease;
+        }
+
+        #backToTop.show {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        @media (max-width:767px) {
+            .hero {
+                min-height: 56vh;
+                padding: 2rem 0;
+            }
+
+            .project-img {
+                height: 160px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- NAVBAR -->
+    <nav class="navbar navbar-expand-lg sticky-top py-3">
+        <div class="container">
+            <a class="navbar-brand d-flex align-items-center gap-2" href="#">
+                <div class="rounded-circle"
+                    style="width:38px;height:38px;display:flex;align-items:center;justify-content:center;background:linear-gradient(180deg,#fff,rgba(255,255,255,0.7));color:var(--accent);font-weight:800;border:1px solid var(--border)">
+                    TN</div>
+                <span class="fw-semibold">Tajniya Nowshin Ome</span>
+            </a>
+
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navmenu"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navmenu">
+                <ul class="navbar-nav ms-auto align-items-center">
+                    <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                    <!--<li class="nav-item"><a class="nav-link" href="index.html">Academics</a></li>
+        <li class="nav-item"><a class="nav-link" href="index.html">Research</a></li>
+        <li class="nav-item"><a class="nav-link" href="projects.html">Projects</a></li>
+        <li class="nav-item"><a class="nav-link" href="index.html">Experience</a></li>
+        <li class="nav-item"><a class="nav-link" href="awards.html">Awards</a></li>
+        <li class="nav-item"><a class="nav-link" href="index.html">Skills</a></li>
+        <li class="nav-item"><a class="nav-link" href="index.html">Contact</a></li>-->
+                    <li class="nav-item ms-2">
+                        <button class="btn btn-soft" id="themeToggle" type="button" aria-label="Toggle theme">
+                            <i class="bi bi-moon-stars me-1" id="themeIcon"></i> Theme
+                        </button>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- HERO / Title -->
+    <header class="py-5">
+        <div class="container text-center">
+            <h1 class="mb-1">All Projects</h1>
+            <p class="lead muted">Research, coursework and personal builds.</p>
+        </div>
+    </header>
+
+    <!-- PROJECTS -->
+    <section id="projects" class="py-5">
+        <div class="container">
+            <div class="d-flex justify-content-between align-items-center mb-3">
+                <h3 class="mb-0"></h3>
+                <div class="small muted"></div>
+            </div>
+
+            <!--<div class="mb-3 filter d-flex flex-wrap gap-2" data-aos="fade-up">
+      <button class="btn btn-ghost btn-sm active" data-filter="all">All</button>
+      <button class="btn btn-ghost btn-sm" data-filter="nlp">NLP</button>
+      <button class="btn btn-ghost btn-sm" data-filter="cv">Computer Vision</button>
+      <button class="btn btn-ghost btn-sm" data-filter="web">Web</button>
+      <button class="btn btn-ghost btn-sm" data-filter="mobile">Mobile</button>
+      <button class="btn btn-ghost btn-sm" data-filter="dataviz">DataViz</button>
+    </div>-->
+
+            <div class="row g-4" id="projectGrid">
+                <!-- Project templates (unchanged; replace with your links) -->
+                <div class="col-md-6 col-lg-4 project-card" data-category="nlp" data-aos="zoom-in">
+                    <div class="card-ghost p-3 h-100">
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS0Eb3oQ6s5c_gd8iI6iehEvbQD5aFGJcDJ6Q&s"
+                            class="project-img w-100" alt="Hybrid Summarizer">
+                        <div class="mt-3">
+                            <h5>Hybrid Text Summarizer</h5>
+                            <p class="small muted mb-2">Extractive + Abstractive pipeline for Bangla, English &
+                                Banglish.</p>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <button class="btn btn-ghost btn-sm" onclick="openProjectModal(this)"
+                                    data-title="Hybrid Text Summarizer"
+                                    data-stack="Python · Transformers · Hugging Face" data-year="2024"
+                                    data-desc="Combines extractive sentence ranking with T5-style abstractive generation; custom tokenization and post‑processing for Bangla, English & Banglish."
+                                    data-img="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS0Eb3oQ6s5c_gd8iI6iehEvbQD5aFGJcDJ6Q&s"
+                                    data-code="https://github.com/your-username/hybrid-summarizer" data-demo="#"
+                                    data-paper="#">
+                                    View details
+                                </button>
+                                <div class="small muted">Python · Transformers</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-6 col-lg-4 project-card" data-category="cv" data-aos="zoom-in" data-aos-delay="50">
+                    <div class="card-ghost p-3 h-100">
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQk8ITHeQoxLxKwE2nzY6kpAKOm50v2xYIXwA&s"
+                            class="project-img w-100" alt="Facial Emotion Recognition">
+                        <div class="mt-3">
+                            <h5>Facial Emotion Recognition</h5>
+                            <p class="small muted mb-2">CNN‑based emotion detection with augmentation.</p>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <button class="btn btn-ghost btn-sm" onclick="openProjectModal(this)"
+                                    data-title="Facial Emotion Recognition" data-stack="PyTorch · OpenCV"
+                                    data-year="2024"
+                                    data-desc="Transfer learning with ResNet, augmentation, and class balance; real‑time webcam inference using OpenCV."
+                                    data-img="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQk8ITHeQoxLxKwE2nzY6kpAKOm50v2xYIXwA&s"
+                                    data-code="https://github.com/your-username/emotion-cnn" data-demo="#">
+                                    View details
+                                </button>
+                                <div class="small muted">OpenCV · PyTorch</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-6 col-lg-4 project-card" data-category="web" data-aos="zoom-in" data-aos-delay="100">
+                    <div class="card-ghost p-3 h-100">
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQn92jkqm9iFlBuLm4-MV48Hti_x9kLlXJXDQ&s"
+                            class="project-img w-100" alt="Image Processing Lab Tools">
+                        <div class="mt-3">
+                            <h5>Speech Delay & Autism Detection</h5>
+                            <p class="small muted mb-2">Developed interpretable pipeline for early ASD detection using
+                                ARM on Q-Chat-10 data.</p>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <button class="btn btn-ghost btn-sm" onclick="openProjectModal(this)"
+                                    data-title="Speech Delay & Autism Detection"
+                                    data-stack="Python · OpenCV · Streamlit" data-year="2023"
+                                    data-desc="By Using Association Rule Mining ,Developed interpretable pipeline for early ASD detection using ARM on Q-Chat-10 data, providing actionable insights for clinicians."
+                                    data-img="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQn92jkqm9iFlBuLm4-MV48Hti_x9kLlXJXDQ&s"
+                                    data-code="https://github.com/your-username/ip-lab" data-demo="#">
+                                    View details
+                                </button>
+                                <div class="small muted">Matlab · Python</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-6 col-lg-4 project-card" data-category="nlp" data-aos="zoom-in" data-aos-delay="150">
+                    <div class="card-ghost p-3 h-100">
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQUTXVhKcchHLw-uu9-7dOn18671HxA6aU1zw&s"
+                            class="project-img w-100" alt="Offensive Language Detection">
+                        <div class="mt-3">
+                            <h5>Bangla Offensive Language Detection</h5>
+                            <p class="small muted mb-2">Fine‑tuned transformers for toxicity classification.</p>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <button class="btn btn-ghost btn-sm" onclick="openProjectModal(this)"
+                                    data-title="Bangla Offensive Language Detection"
+                                    data-stack="Python · Transformers · Datasets" data-year="2024"
+                                    data-desc="Multilingual models with class weighting and focal loss; evaluated with F1 and MCC; robust preprocessing for Bangla text."
+                                    data-img="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQUTXVhKcchHLw-uu9-7dOn18671HxA6aU1zw&s"
+                                    data-code="https://github.com/your-username/bn-offensive" data-demo="#">
+                                    View details
+                                </button>
+                                <div class="small muted">NLP · Classification</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="col-md-6 col-lg-4 project-card" data-category="mobile" data-aos="zoom-in"
+                    data-aos-delay="200">
+                    <div class="card-ghost p-3 h-100">
+                        <img src="https://images.unsplash.com/photo-1551650975-87deedd944c3?q=80&w=1200&auto=format&fit=crop"
+                            class="project-img w-100" alt="Flutter Habit Tracker">
+                        <div class="mt-3">
+                            <h5>Flutter Habit Tracker</h5>
+                            <p class="small muted mb-2">Minimal habit tracking with charts and reminders.</p>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <button class="btn btn-ghost btn-sm" onclick="openProjectModal(this)"
+                                    data-title="Flutter Habit Tracker" data-stack="Flutter · Provider · SQLite"
+                                    data-year="2023"
+                                    data-desc="Offline‑first app with streaks, analytics, and local notifications; designed for accessibility and consistency."
+                                    data-img="https://images.unsplash.com/photo-1551650975-87deedd944c3?q=80&w=1200&auto=format&fit=crop"
+                                    data-code="https://github.com/your-username/habit-tracker" data-demo="#">
+                                    View details
+                                </button>
+                                <div class="small muted">Flutter · Mobile</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-6 col-lg-4 project-card" data-category="dataviz" data-aos="zoom-in"
+                    data-aos-delay="250">
+                    <div class="card-ghost p-3 h-100">
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRaFOKgpogGcI2w7WBHFAwyJA3BsL5lyokW0A&s"
+                            class="project-img w-100" alt="Data Visualization Dashboard">
+                        <div class="mt-3">
+                            <h5>Sugarcane Yield Prediction</h5>
+                            <p class="small muted mb-2">Forecasted sugarcane yield using ensemble ML</p>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <button class="btn btn-ghost btn-sm" onclick="openProjectModal(this)"
+                                    data-title="Sugarcane Yield Prediction" data-stack="Colab,kaggle,Matlab"
+                                    data-year="2023"
+                                    data-desc="Ensemble ML,RandomForest,Stacking-Forecasted sugarcane yield using ensemble ML. Accepted paper at symposium, demonstrating practical agricultural optimization."
+                                    data-img="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRaFOKgpogGcI2w7WBHFAwyJA3BsL5lyokW0A&s"
+                                    data-code="https://github.com/your-username/dataviz-dashboard" data-demo="#">
+                                    View details
+                                </button>
+                                <div class="small muted">Web · Charts</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-6 col-lg-4 project-card" data-category="nlp" data-aos="zoom-in" data-aos-delay="150">
+                    <div class="card-ghost p-3 h-100">
+                        <img src="WhatsApp Image 2025-09-24 at 19.05.44_ff590e4e.jpg" class="project-img w-100"
+                            alt="Offensive Language Detection">
+                        <div class="mt-3">
+                            <h5>Maze Solver Robot</h5>
+                            <p class="small muted mb-2">A Maze Solver Robot is an autonomous robotic system designed to
+                                navigate and find the optimal path in a maze without human intervention</p>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <button class="btn btn-ghost btn-sm" onclick="openProjectModal(this)"
+                                    data-title="Maze Solver Robot" data-stack="Arduino · STM32 · PIC" data-year="2024"
+                                    data-desc="It typically uses sensors such as IR sensors, ultrasonic sensors, or cameras to detect walls and pathways. Algorithms like Depth-First Search (DFS), Breadth-First Search (BFS), Dijkstra’s Algorithm, or the Flood Fill algorithm are implemented to decide the shortest or most efficient path."
+                                    data-img="WhatsApp Image 2025-09-24 at 19.05.44_ff590e4e.jpg"
+                                    data-code="https://github.com/your-username/bn-offensive" data-demo="#">
+                                    View details
+                                </button>
+                                <div class="small muted">Arduino · STM32 · PIC</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4 project-card" data-category="nlp" data-aos="zoom-in" data-aos-delay="150">
+                    <div class="card-ghost p-3 h-100">
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQI-E4rf4JkMma6cQPT0-xqnUGqBTsJC-mL1A&s"
+                            class="project-img w-100" alt=".">
+                        <div class="mt-3">
+                            <h5>Basic VPN Setup with OpenVPN</h5>
+                            <p class="small muted mb-2">Establish a secure virtual private network (VPN) and understand
+                                encryption tunnels.</p>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <button class="btn btn-ghost btn-sm" onclick="openProjectModal(this)"
+                                    data-title="Basic VPN Setup with OpenVPN" data-stack="Kali · Linux ·  OpenVPN"
+                                    data-year="2024"
+                                    data-desc="Configured a VPN server and client to enable secure remote connections.Explored encryption protocols to protect data in transit."
+                                    data-img="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQI-E4rf4JkMma6cQPT0-xqnUGqBTsJC-mL1A&s"
+                                    data-code="https://github.com/your-username/bn-offensive" data-demo="#">
+                                    View details
+                                </button>
+                                <div class="small muted">Kali · Linux · OpenVPN</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4 project-card" data-category="nlp" data-aos="zoom-in" data-aos-delay="150">
+                    <div class="card-ghost p-3 h-100">
+                        <img src="image1.png" class="project-img w-100" alt="Offensive Language Detection">
+                        <div class="mt-3">
+                            <h5>3D Maze Explorer</h5>
+                            <p class="small muted mb-2">The 3D Maze Explorer is an engaging and immersive application
+                                developed using OpenGL and GLUT libraries.</p>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <button class="btn btn-ghost btn-sm" onclick="openProjectModal(this)"
+                                    data-title="3D Maze Explorer" data-stack="OpenGL · GLUT" data-year="2024" data-desc="It provides users with a dynamic 3D environment
+where they can explore a maze, collect objects, and track their scores. The application
+features realistic lighting effects, intuitive navigation, a real-time HUD, and
+interactive gameplay mechanics." data-img="image1.png" data-code="https://github.com/your-username/bn-offensive"
+                                    data-demo="#">
+                                    View details
+                                </button>
+                                <div class="small muted">OpenGL · GLUT</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="small muted mt-3"></div>
+        </div>
+    </section>
+    <!-- FOOTER -->
+    <footer class="py-4">
+        <div class="container d-flex flex-column flex-md-row justify-content-between align-items-center gap-2">
+            <div>© <strong>Tajniya Nowshin Ome</strong></div>
+            <!-- Add this line -->
+            <div class="small">Last updated: <span id="lastUpdated"></span></div>
+        </div>
+    </footer>
+
+    <!-- Back to top -->
+    <button id="backToTop" class="btn btn-primary rounded-circle shadow" aria-label="Back to top"><i
+            class="bi bi-arrow-up"></i></button>
+
+    <!-- Project Modal -->
+    <div class="modal fade" id="projectModal" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-lg modal-dialog-centered">
+            <div class="modal-content card-ghost">
+                <div class="modal-header border-0">
+                    <h5 class="modal-title" id="pmTitle">Project</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body pt-0">
+                    <img id="pmImg" src="" alt="" class="img-fluid rounded mb-3"
+                        style="max-height:320px;object-fit:cover">
+                    <div class="d-flex flex-wrap gap-2 mb-2">
+                        <span class="chip" id="pmStack"></span>
+                        <span class="chip" id="pmYear"></span>
+                    </div>
+                    <p class="muted" id="pmDesc"></p>
+                </div>
+                <div class="modal-footer border-0">
+                    <a href="#" target="_blank" class="btn btn-ghost" id="pmCode"><i
+                            class="bi bi-code-slash me-2"></i>Code</a>
+                    <a href="#" target="_blank" class="btn btn-ghost" id="pmDemo"><i
+                            class="bi bi-box-arrow-up-right me-2"></i>Demo</a>
+                    <a href="#" target="_blank" class="btn btn-ghost" id="pmPaper" style="display:none"><i
+                            class="bi bi-file-earmark-text me-2"></i>Paper</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+    <script>
+        // Initialize AOS
+        AOS.init({ duration: 800, once: true });
+
+        // Animate skill bars when section enters view
+        const io = new IntersectionObserver(entries => {
+            entries.forEach(e => {
+                if (e.isIntersecting) {
+                    e.target.querySelectorAll('.skill-fill').forEach(el => {
+                        const target = el.style.getPropertyValue('--target') || '0%';
+                        el.style.width = target;
+                    });
+                }
+            });
+        }, { threshold: 0.3 });
+        document.querySelectorAll('#skills .card-ghost').forEach(card => io.observe(card));
+
+        // Projects filter
+        document.querySelectorAll('.filter .btn').forEach(btn => {
+            btn.addEventListener('click', () => {
+                document.querySelectorAll('.filter .btn').forEach(b => b.classList.remove('active'));
+                btn.classList.add('active');
+                const f = btn.getAttribute('data-filter');
+                document.querySelectorAll('#projectGrid .project-card').forEach(card => {
+                    const show = (f === 'all') || (card.dataset.category === f);
+                    card.style.display = show ? '' : 'none';
+                });
+                updateCounts();
+            });
+        });
+
+        // Project modal
+        function openProjectModal(trigger) {
+            const d = trigger.dataset;
+            document.getElementById('pmTitle').textContent = d.title || 'Project';
+            document.getElementById('pmImg').src = d.img || '';
+            document.getElementById('pmImg').alt = d.title || 'Project image';
+            document.getElementById('pmStack').textContent = d.stack || '';
+            document.getElementById('pmYear').textContent = d.year || '';
+            document.getElementById('pmDesc').textContent = d.desc || '';
+            const code = document.getElementById('pmCode');
+            const demo = document.getElementById('pmDemo');
+            const paper = document.getElementById('pmPaper');
+            code.href = d.code || '#';
+            demo.href = d.demo || '#';
+            if (d.paper) { paper.href = d.paper; paper.style.display = 'inline-block'; } else { paper.style.display = 'none'; }
+            const modal = new bootstrap.Modal(document.getElementById('projectModal'));
+            modal.show();
+        }
+
+        // BibTeX copy
+        function copyBib(btn) {
+            const text = btn.getAttribute('data-bibtex') || '';
+            navigator.clipboard.writeText(text).then(() => {
+                btn.innerHTML = '<i class="bi bi-check2 me-1"></i>Copied';
+                setTimeout(() => btn.innerHTML = '<i class="bi bi-clipboard me-1"></i>BibTeX', 1200);
+            });
+        }
+
+        // Contact form (mailto fallback)
+        function sendMail(e) {
+            e.preventDefault();
+            const name = document.getElementById('cname').value.trim();
+            const email = document.getElementById('cemail').value.trim();
+            const msg = document.getElementById('cmsg').value.trim();
+            const subject = encodeURIComponent('Portfolio contact from ' + name);
+            const body = encodeURIComponent('From: ' + name + ' (' + email + ')\n\n' + msg);
+            window.location.href = 'mailto:nowshintajniya@gmail.com?subject=' + subject + '&body=' + body;
+            const status = document.getElementById('formStatus');
+            status.textContent = 'Opening your email client...';
+            status.classList.add('muted');
+        }
+
+        // Back to top
+        const backBtn = document.getElementById('backToTop');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 360) { backBtn.classList.add('show'); } else { backBtn.classList.remove('show'); }
+        });
+        backBtn.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
+
+
+        // Counters (publications = items in #pubList only)
+        function updateCounts() {
+            // These lines are safe because querySelectorAll just returns an empty list if nothing is found
+            const projVisible = [...document.querySelectorAll('#projectGrid .project-card')].filter(c => c.style.display !== 'none').length;
+            const pubs = document.querySelectorAll('#pubList .pub-item').length;
+
+            // Get the counter elements
+            const projCounter = document.getElementById('projCount');
+            const pubCounter = document.getElementById('pubCount');
+
+            // ONLY update them if they exist on the page
+            if (projCounter) {
+                projCounter.textContent = projVisible;
+            }
+            if (pubCounter) {
+                pubCounter.textContent = pubs;
+            }
+        }
+        updateCounts();
+
+        // Last updated
+        document.getElementById('lastUpdated').textContent = new Date().toLocaleDateString(undefined, { year: 'numeric', month: 'short' });
+
+        // THEME: Day/Night with persistence
+        (function () {
+            const html = document.documentElement;
+            const btn = document.getElementById('themeToggle');
+            const icon = document.getElementById('themeIcon');
+
+            function systemPrefersDark() { return window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches; }
+
+            function applyTheme(mode) {
+                // mode: 'light' | 'dark' | 'auto'
+                html.setAttribute('data-theme', mode === 'auto' ? (systemPrefersDark() ? 'dark' : 'light') : mode);
+                localStorage.setItem('theme-mode', mode);
+                const effective = html.getAttribute('data-theme');
+                icon.className = effective === 'dark' ? 'bi bi-brightness-high me-1' : 'bi bi-moon-stars me-1';
+                btn.setAttribute('aria-pressed', effective === 'dark');
+                btn.setAttribute('aria-label', effective === 'dark' ? 'Switch to day mode' : 'Switch to night mode');
+            }
+
+            function initTheme() {
+                const saved = localStorage.getItem('theme-mode');
+                if (saved === 'light' || saved === 'dark' || saved === 'auto') {
+                    applyTheme(saved);
+                } else {
+                    applyTheme('auto');
+                }
+            }
+
+            btn.addEventListener('click', () => {
+                const current = localStorage.getItem('theme-mode') || 'auto';
+                const next = current === 'light' ? 'dark' : current === 'dark' ? 'auto' : 'light';
+                applyTheme(next);
+            });
+
+            if (window.matchMedia) {
+                window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', () => {
+                    if ((localStorage.getItem('theme-mode') || 'auto') === 'auto') {
+                        applyTheme('auto');
+                    }
+                });
+            }
+
+            initTheme();
+        })();
+    </script>
+</body>
+
+</html>
